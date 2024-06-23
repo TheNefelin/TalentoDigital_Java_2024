@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "NotoSans-Medium";
+  src: url("/MeetAndCoffee/assets/fonts/NotoSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "NotoSans-Light";
+  src: url("/MeetAndCoffee/assets/fonts/NotoSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "NotoSans-Thin";
+  src: url("/MeetAndCoffee/assets/fonts/NotoSans-Thin.ttf");
+}
+
+:root {
+  --color01: rgb(0, 0, 0);
+  --color02: rgb(255, 255, 255);
+  --color03: rgb(164, 69, 44);
+}
+
+* {
+  box-sizing:  border-box;
+}
+
+html {
+  font-family: NotoSans-Medium;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color02);
+}
+
+nav > ul {
+  background-color: var(--color01);
+  display: flex;
+  margin: 0;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  font-family: NotoSans-Light;
+  font-size: 0.8rem;
+}
+
+nav > ul img {
+  height: 1.5rem;
+  padding-left: 2rem;
+}
+
+header {
+  position: relative;
+}
+
+header > img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+
+header > section {
+  position: absolute;
+  top: 15%;
+  right: 4rem;
+  color: var(--color02);
+  text-align: right;
+  text-shadow: 1px 1px 1px var(--color01);
+}
+
+header h1, p {
+  margin: 0;
+}
+
+header p {
+  font-family: NotoSans-Light;
+}
+
+.reunion {
+  display: grid;
+  place-items: center;
+  padding: 4rem;
+}
+
+.reunion > img {
+  height: 8rem;
+}
+
+.reunion p {
+  font-family: NotoSans-Light;
+  margin: 0;
+}
+
+article {
+  background-color: var(--color03);
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+article > img {
+  height: 8rem;
+}
+
+article > section {
+  color: var(--color02);
+  max-width: 22rem;
+  font-family: NotoSans-Thin;
+  font-size: 0.7rem;
+
+  display: grid;
+  gap: 0.5rem;
+}
+
+article > section > div > * {
+  margin: 0;
+}
+
+.galeria {
+  text-align: center;
+  padding: 2rem 0 4rem 0;
+}
+
+.galeria > div {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.galeria a {
+  font-family: NotoSans-Light;
+  display: grid;
+  gap: 1rem;
+  color: var(--color01);
+}
+
+.galeria img {
+  height: 5rem;
+  margin: auto;
+}
+
+footer {
+  font-family: NotoSans-Thin;
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--color02);
+  background-color: var(--color01);
+  padding: 0.5rem;
+}
+
+footer > section {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.icons {
+  height: 1.8rem;
+  margin: 1rem 0;
+}
+
+.post-main {
+  max-width: 43rem;
+  margin: auto;
+  display: grid;
+  gap: 1rem;
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+.post-main img {
+  width: 100%;
+}
+
+.post-main  p {
+  font-family: NotoSans-Light;
+  margin: 0;
+}
+
+#Eventos-Anteriores {
+  text-align: center;
+}

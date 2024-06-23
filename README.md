@@ -1,0 +1,67 @@
+# Jakarta EE
+
+### Dependency
+* [IntelliJ](https://www.jetbrains.com/idea/)
+* [Java SDK 21](https://www.oracle.com/java/technologies/downloads/)
+* [Tomcat](https://tomcat.apache.org/download-10.cgi) (Linux: core tar.gz, win: core 64-bit-windows zip)
+
+### All modules
+* [Module 2]()
+* [Module 3]()
+* [Module 4]()
+* [Module 5]()
+
+## Projects list [Module 2]()
+- [Meet And Coffee]() (web)
+- [Curriculum]() (web)
+- [Iguana]() (web)
+- [Suricata]() (web)
+- [Olivia Ros]() (web)
+- [Cuppon]() (web)
+- [Notas]() (web)
+- [Ricomida]() (web)
+- [Calculadora]() (web)
+- [Landing]() (web)
+- [Viajes Chile]() (web)
+
+## Projects list [Module 3]()
+- [DB]() (MySQL)
+- [DDL]() (MySQL)
+- [DML]() (MySQL)
+- [Gym]() (MySQL)
+- [Peliculas]() (MySQL)
+- [viajeros_Dia05]() (MySQL)
+- [Banck_Dia06]() (MySQL)
+- [Desafio_Dia06]() (MySQL)
+- [mawashi_DDL_Dia07]() (MySQL)
+- [Desafio_Peliculas_Dia09]() (MySQL)
+- [Desafio_Dia12]() (MySQL)
+- [Prueba_Dia13]() (MySQL)
+
+## Projects list [Module 4]()
+- [Desafio Dia03 Resistencia]() (Java)
+- [Desafio Dia06 Edades]() (Java)
+- [Desafio Dia09 While por DoWhile]() (Java)
+- [Desafio Dia12 Patrones]() (Java)
+- [Desafio Dia15 Operando con Arreglos]() (Java)
+- [Desafio Dia18 Escritura y Lectura]() (Java)
+- [Desafio Dia20 Automotora]() (Java)
+- [Desafio Dia21 Automotora2]() (Java)
+- [Desafio Dia23 Automotora3]() (Java)
+- [Desafio Dia25 Manejo de Excepciones]() (Java)
+- [Desafio Dia27 Indiana Jeans]() (Java)
+- [Desafio Dia28 Recicla Jeans]() (Java)
+- [Desafio Dia30 Mirando el Pasado]() (Java)
+- [-----]() (Java)
+- [Prueba Dia36 Sistema de Clientes]() (Maven)
+
+## Projects list [Module 5]()
+
+- [Ejercicio Dia01 Rest]() (Jakarta API Rest)
+- [Ejercicio Dia01 Demo WebApp]() (Jakarta Web Application)
+- [Ejercicio Dia01 FirstWebProject]() (Jakarta Web Application)
+- [Ejercicio Dia02 Actividad JSP]() (Jakarta Web Application)
+- [Desafio Dia03 Factorial Fibonacci JSP]() (Jakarta Web Application)
+- [Ejercicio Dia04 Actividad JSTL]() (Jakarta Web Application)
+
+<hr>

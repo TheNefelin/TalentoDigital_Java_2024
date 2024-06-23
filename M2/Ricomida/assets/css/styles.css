@@ -1,0 +1,58 @@
+:root {
+  --grey: #373a3c;
+  --light: #dddddd;
+  --black: #000;
+  --white: #fff;
+  --red: #dc3545;
+}
+
+.linea, .linea-2 {
+  background-color: var(--black);
+  height: 0.15rem;
+}
+
+.linea-2 {
+  width: 9rem;
+}
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cabin-regular {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.cabin-Bold {
+  font-family: "Cabin", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.subscription {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 6rem 0;
+}
+
+.subscription > .cabin-Bold {
+  font-size: 1.8rem;
+}
+
+footer {
+  background-color: var(--grey);
+  color: var(--white);
+  font-size: 2rem;
+}

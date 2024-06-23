@@ -1,0 +1,2 @@
+Patente,Edad,Fecha,NombreDeVenta
+A111111,265,20240505,VentaJabba

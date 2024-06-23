@@ -1,0 +1,97 @@
+/* colores */
+
+:root {
+  --black: rgb(33, 37, 41);
+  --white: rgb(255, 255, 255);
+  --pink: rgb(232, 62, 140);
+  --info: rgb(23, 162, 184);
+}
+
+/* fonts */
+
+body {
+  font-weight: 400;
+}
+
+.open-sans-bold {
+  font-weight: 700;
+}
+
+/* navbar */
+
+.navbar {
+  background-color: var(--pink);
+}
+
+nav img {
+  height: 3rem;
+}
+
+.container-fluid {
+  max-width: 70rem;
+  padding: 0 4rem;
+}
+
+.nav-link {
+  color: var(--white);
+}
+
+/* title */
+
+h1 {
+  font-weight: 700;
+  text-align: center;
+  padding: 3rem;
+}
+
+/* card */
+
+.container {
+  max-width: 70rem;
+  padding-bottom: 4rem;
+}
+
+.card {
+  padding: 0;
+}
+
+.card a {
+  text-decoration: none;
+  color: var(--info);
+}
+
+.card-img-top {
+  height: 9rem;
+  object-fit: cover;
+}
+
+/* payment */
+
+.pay {
+  background-color: var(--info);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.pay > h1, i {
+  color: var(--white);
+}
+
+i {
+  font-size: 3rem;
+}
+
+/* footer */
+
+footer {
+  height: 11.5rem;
+  background-color: var(--pink);
+  display: grid;
+  place-items: center;
+}
+
+footer > img {
+  height: 5rem;
+}

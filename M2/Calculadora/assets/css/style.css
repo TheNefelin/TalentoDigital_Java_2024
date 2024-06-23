@@ -1,0 +1,44 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+h1 {
+  text-align: right;
+}
+
+hr {
+  width: 15rem;
+}
+
+.calculadora {
+  border: 1px solid black;
+  border-radius: 4px;
+  background-color: rgb(255, 243, 227);
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.calculadora > div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.numero {
+  display: inline-block;
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 4px;
+  background-color: azure;
+  font-weight: 900;
+}
+
+.resultado {
+  border: 1px solid black;
+}

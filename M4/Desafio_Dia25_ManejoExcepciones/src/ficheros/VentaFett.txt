@@ -1,0 +1,2 @@
+Patente,Edad,Fecha,NombreDeVenta
+A112233,62,20240515,VentaFett

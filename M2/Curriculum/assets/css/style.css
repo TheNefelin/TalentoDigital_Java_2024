@@ -1,0 +1,72 @@
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/Curriculum/assets/fonts/Roboto-Regular.ttf");
+}
+
+body {
+  background-image: url("/Curriculum/assets/img/background.jpg");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1rem;
+  font-family: Roboto;
+  margin: 0;
+}
+
+@media (width < 600px) {
+  body {
+    font-size: 0.75rem;
+  }
+}
+
+header > h1 {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5)
+}
+
+header > section {
+  display: flex;
+}
+
+h3 {
+  background-color: grey;
+  color: white;
+  padding: 1rem;
+}
+
+#idle_img {
+  border-radius: 50%;
+  height: 15rem;
+  border: 5px solid white;
+  margin: 1rem;
+}
+
+.container {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.social {
+  width: 1rem;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+i {
+  color: rebeccapurple;
+}

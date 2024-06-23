@@ -1,0 +1,73 @@
+.raleway-medium {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.raleway-bold {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar a {
+  color: var(--bs-white);
+}
+
+.header-container {
+  background: url("../img/bg-hero.jpg") no-repeat left;
+  background-size: cover;
+  height: 40rem;
+  width: 100%;
+  color: var(--bs-white);
+  text-align: right;
+}
+
+.header-container section {
+  max-width: 36.5rem;
+  margin: auto 15%;
+}
+
+.header-container h1 {
+  font-size: 4.3rem;
+}
+
+.header-container button {
+  color: var(--bs-white);
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+.acercade article {
+  width: 18rem;
+}
+
+.trabajos h2 {
+  color: var(--bs-white);
+}
+
+.trabajos img {
+  height: 10rem;
+  object-fit: cover;
+}
+
+.card {
+  padding: 0;
+}
+
+.form-button {
+  color: var(--bs-white);
+}
+
+footer {
+  color: var(--bs-white); 
+  background-color: var(--bs-black);
+}

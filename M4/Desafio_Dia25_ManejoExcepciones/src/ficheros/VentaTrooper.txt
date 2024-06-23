@@ -1,0 +1,2 @@
+Patente,Edad,Fecha,NombreDeVenta
+A654321,25,20240517,VentaTrooper

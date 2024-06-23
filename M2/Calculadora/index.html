@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./assets/css/normalize.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <title>Notas</title>
+</head>
+<body>
+
+  <section class="calculadora">
+    <h1 id="resultado" class="resultado">0</h1>
+    <div>
+      <button onclick="handleClickNum(this)" id="uno" class="numero">1</button>
+      <button onclick="handleClickNum(this)" id="dos" class="numero">2</button>
+      <button onclick="handleClickNum(this)" id="tres" class="numero">3</button>
+    </div>
+    <div>
+      <button onclick="handleClickNum(this)" id="cuatro" class="numero">4</button>
+      <button onclick="handleClickNum(this)" id="cinco" class="numero">5</button>
+      <button onclick="handleClickNum(this)" id="seis" class="numero">6</button>
+    </div>
+    <div>
+      <button onclick="handleClickNum(this)" id="siete" class="numero">7</button>
+      <button onclick="handleClickNum(this)" id="ocho" class="numero">8</button>
+      <button onclick="handleClickNum(this)" id="nueve" class="numero">9</button>
+    </div>
+    <div>
+      <button onclick="handleClickIgual()" id="siete" class="numero">=</button>
+      <button onclick="handleClickNum(this)" id="cero" class="numero">0</button>
+      <button onclick="handleClear()" id="nueve" class="numero">C</button>
+    </div>
+    <hr>
+    <div>
+      <button onclick="handleClickOperador(this)" id="mas" class="numero">+</button>
+      <button onclick="handleClickOperador(this)" id="menos" class="numero">-</button>
+      <button onclick="handleClickOperador(this)" id="dividir" class="numero">/</button>
+      <button onclick="handleClickOperador(this)" id="por"class="numero">*</button>
+    </div>
+  </section>
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
