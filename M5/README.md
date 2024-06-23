@@ -1,17 +1,13 @@
 # Jakarta EE
 
-### Resource
-* [IntelliJ](https://www.jetbrains.com/idea/)
-* [Java SDK 21](https://www.oracle.com/java/technologies/downloads/)
-* [Tomcat](https://tomcat.apache.org/download-10.cgi) (Linux: core tar.gz, win: core 64-bit-windows zip)
-
 ### Projects list
-- [Jakarta Rest]() (API)
-- [Jakarta Demo WebApp]() (Web Application)
-- [Jakarta FirstWebProject]() (Web Application)
-- [Jakarta ActividadJSP]() (Web Application)
-- [Jakarta DesafioJSP]() (Web Application)
-- [Jakarta EjercicioJSTL]() (Web Application)
+- [Ejercicio Dia01 Rest](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/rest) (Jakarta API Rest)
+- [Ejercicio Dia01 Demo WebApp](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/demo) (Jakarta Web Application)
+- [Ejercicio Dia01 FirstWebProject](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/FirstWebProject) (Jakarta Web Application)
+- [Ejercicio Dia02 Actividad JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/ActividadJSP) (Jakarta Web Application)
+- [Desafio Dia03 Factorial Fibonacci JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/DesafioJSPDia03) (Jakarta Web Application)
+- [Ejercicio Dia04 Actividad JSTL](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/EjercicioJSTL) (Jakarta Web Application)
+
 
 ### New project
 - Jakarta EE

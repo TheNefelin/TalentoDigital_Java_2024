@@ -1,17 +1,17 @@
 # Web Bootstrap JS JQuery
 
 ### New project
-- [Meet And Coffee]() (web)
-- [Curriculum]() (web)
-- [Iguana]() (web)
-- [Suricata]() (web)
-- [Olivia Ros]() (web)
-- [Cuppon]() (web)
-- [Notas]() (web)
-- [Ricomida]() (web)
-- [Calculadora]() (web)
-- [Landing]() (web)
-- [Viajes Chile]() (web)
+- [Meet And Coffee](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/MeetAndCoffee) (web)
+- [Curriculum](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Curriculum) (web)
+- [Iguana](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Iguana) (web)
+- [Suricata](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Suricata) (web)
+- [Olivia Ros](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/OliviaRos) (web)
+- [Cuppon](https://github.com/TheNefelin/Cuppon) (web)
+- [Notas](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Notas) (web)
+- [Ricomida](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Ricomida) (web)
+- [Calculadora](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M2/Calculadora) (web)
+- [Landing](https://github.com/TheNefelin/Landing) (web)
+- [Viajes Chile](https://github.com/TheNefelin/Viajes_Chile) (web)
 
 ### Some git Command
 ```

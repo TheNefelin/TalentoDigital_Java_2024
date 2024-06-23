@@ -1,18 +1,18 @@
 # MySQL
 
 ### New project
-- [DB]() (MySQL)
-- [DDL]() (MySQL)
-- [DML]() (MySQL)
-- [Gym]() (MySQL)
-- [Peliculas]() (MySQL)
-- [viajeros_Dia05]() (MySQL)
-- [Banck_Dia06]() (MySQL)
-- [Desafio_Dia06]() (MySQL)
-- [mawashi_DDL_Dia07]() (MySQL)
-- [Desafio_Peliculas_Dia09]() (MySQL)
-- [Desafio_Dia12]() (MySQL)
-- [Prueba_Dia13]() (MySQL)
+- [DB](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/DB.sql) (MySQL)
+- [DDL](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/DDL.sql) (MySQL)
+- [DML](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/DML.sql) (MySQL)
+- [Gym](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Gym.sql) (MySQL)
+- [Peliculas](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Peliculas.sql) (MySQL)
+- [viajeros_Dia05](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/viajeros_Dia05.sql) (MySQL)
+- [Banck_Dia06](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Banck_Dia06.sql) (MySQL)
+- [Desafio_Dia06](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Desafio_Dia06.sql) (MySQL)
+- [mawashi_DDL_Dia07](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/mawashi_DDL_Dia07.sql) (MySQL)
+- [Desafio_Peliculas_Dia09](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Desafio_Peliculas_Dia09.sql) (MySQL)
+- [Desafio_Dia12](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Desafio_Dia12.jpg) (MySQL)
+- [Prueba_Dia13](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Prueba_Dia13.sql) (MySQL)
 
 # Java MySQL Gym
 
