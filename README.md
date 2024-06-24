@@ -71,11 +71,10 @@
 
 ## Projects list [Module 5](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5)
 
-- [Ejercicio Dia01 Rest](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/rest) (Jakarta API Rest)
-- [Ejercicio Dia01 Demo WebApp](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/demo) (Jakarta Web Application)
-- [Ejercicio Dia01 FirstWebProject](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/FirstWebProject) (Jakarta Web Application)
-- [Ejercicio Dia02 Actividad JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/ActividadJSP) (Jakarta Web Application)
-- [Desafio Dia03 Factorial Fibonacci JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/DesafioJSPDia03) (Jakarta Web Application)
-- [Ejercicio Dia04 Actividad JSTL](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/EjercicioJSTL) (Jakarta Web Application)
-
+- [Actividades y Ejercicios](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Actividades) (Jakarta Web Application)
+    * La Hora
+    * Efemeérides
+    * JSTL
+- [Ejercicio Dia01 Rest](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia01_Demo) (Jakarta API Rest)
+- [Desafio Dia03 Factorial Fibonacci JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia03_DesafioJSP) (Jakarta Web Application)
 <hr>
