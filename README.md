@@ -39,6 +39,16 @@
 - [Prueba_Dia13](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Prueba_Dia13.sql) (MySQL)
 
 ## Projects list [Module 4](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4)
+- [Clases](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Clases)    
+- [Ejercicios Java](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Ejercicios_Java)
+    * Archivos
+    * Autos
+    * Notilleria
+    * Caballos
+    * Encomienda
+    * Informatica
+    * Instituto
+    * Otros
 - [Ejercicios Maven](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Ejercicios_Maven)
     * Futbol
     * Personas
