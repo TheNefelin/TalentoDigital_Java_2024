@@ -39,6 +39,9 @@
 - [Prueba_Dia13](https://github.com/TheNefelin/TalentoDigital_Java_2024/blob/main/M3/Prueba_Dia13.sql) (MySQL)
 
 ## Projects list [Module 4](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4)
+- [Ejercicios Maven](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Ejercicios_Maven)
+    * Futbol
+    * Personas
 - [Desafio Dia03 Resistencia](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia03_Resistencia) (Java)
 - [Desafio Dia06 Edades](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia06_Edades) (Java)
 - [Desafio Dia09 While por DoWhile](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia09_WhilePorDoWhile) (Java)
@@ -52,7 +55,8 @@
 - [Desafio Dia27 Indiana Jeans](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia27_IndianaJeans) (Java)
 - [Desafio Dia28 Recicla Jeans](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia28_ReciclaJeans) (Java)
 - [Desafio Dia30 Mirando el Pasado](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia30_MirandoElPasado) (Java)
-- [-----]() (Java)
+- [Desafio Dia32 Calculadora](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia32_Calculadora) (Maven)
+- [Desafio Dia33 Calculadora2](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Desafio_Dia34_Calculadora2) (Maven)
 - [Prueba Dia36 Sistema de Clientes](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M4/Prueba_Maven_SistemaDeClientes) (Maven)
 
 ## Projects list [Module 5](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5)
