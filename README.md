@@ -75,6 +75,8 @@
     * La Hora
     * Efemeérides
     * JSTL
-- [Ejercicio Dia01 Rest](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia01_Demo) (Jakarta API Rest)
-- [Desafio Dia03 Factorial Fibonacci JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia03_DesafioJSP) (Jakarta Web Application)
-<hr>
+- [Dia01 Ejercicio Rest](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia01_Demo) (Jakarta API Rest)
+- [Dia03 Desafio Factorial Fibonacci JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia03_DesafioJSP) (Jakarta Web Application)
+- [Dia05 Actividad Venta Tickets JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia05_Actividad_Venta_Tickets) (Jakarta Web Application)
+- [Dia05 Ejercicio Formulario](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia05_Ejercicio_Formulario) (Jakarta Web Application)
+
