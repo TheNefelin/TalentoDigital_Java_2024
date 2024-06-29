@@ -25,7 +25,13 @@
 </dependency>
 ```
 
-### Injectar Ccomponentes html
+### Injectar Componentes html
 ```
 <%@include file="assets/html/head.jsp"%>
+```
+
+### accent issue
+```
+// in every jsp add..
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 ```
