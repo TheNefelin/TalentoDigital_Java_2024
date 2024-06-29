@@ -21,8 +21,8 @@ public class HeroeServlet extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Personaje> heroes = sh.listaHeroes();
-        request.setAttribute("heroes", heroes);
+        List<Personaje> listaHeroes = sh.listaHeroes();
+        request.setAttribute("listaHeroes", listaHeroes);
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
@@ -57,7 +57,6 @@ public class HeroeServlet extends HttpServlet {
         }
     }
 
-    @Override
     public void destroy() {
         super.destroy();
     }
