@@ -80,5 +80,7 @@
 - [Dia05 Actividad Venta Tickets JSP](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia05_Actividad_Venta_Tickets) (Jakarta Web Application)
 - [Dia05 Ejercicio Formulario](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia05_Ejercicio_Formulario) (Jakarta Web Application)
 - [Dia06 Desafio Hotel](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia06_Desafio_Hotel) (Jakarta Web Application)
-
+- [Dia08 Ejercicio Login](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia08_Ejercicio_Login) (Jakarta Web Application)
+- [Dia09 Desafio Matematicas](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia09_Desafio_Matematicas) (Jakarta Web Application)
+- [Heroe](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Heroe) (Jakarta WebApp Servlet)
 
