@@ -1,6 +1,6 @@
-package cl.praxis.webapp;
+package cl.praxis.controllers;
 
-import cl.praxis.models.Calculator;
+import cl.praxis.services.CalculatorService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +17,7 @@ public class CalculatorServlet extends HttpServlet {
         int number2 = validateInt(req.getParameter("number2"));
         int operation = validateInt(req.getParameter("operation"));
 
-        Calculator calculator = new Calculator();
+        CalculatorService calculator = new CalculatorService();
 
         System.out.println(calculator.calculate(number1, number2, operation));
 

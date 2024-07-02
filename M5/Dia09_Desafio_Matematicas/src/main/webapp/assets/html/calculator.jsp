@@ -1,9 +1,9 @@
-<%@ page import="cl.praxis.models.Calculator" %>
+<%@ page import="cl.praxis.services.CalculatorService" %>
 <%@ page import="java.util.Map" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="operations" value="<%= new Calculator().getOperations().entrySet() %>"/>
+<c:set var="operations" value="<%= new CalculatorService().getOperations().entrySet() %>"/>
 
 <h1>Calculadora</h1>
 

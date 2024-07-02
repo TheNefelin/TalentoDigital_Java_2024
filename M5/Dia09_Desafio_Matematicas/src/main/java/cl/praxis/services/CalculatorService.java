@@ -1,12 +1,12 @@
-package cl.praxis.models;
+package cl.praxis.services;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Calculator {
+public class CalculatorService {
     private Map<Integer, String> operations = new LinkedHashMap<>();
 
-    public Calculator() {
+    public CalculatorService() {
         operations.put(1, "Suma");
         operations.put(2, "Resta");
         operations.put(3, "Multiplicación");
@@ -54,7 +54,7 @@ public class Calculator {
         if (num2 == 0)
             return "Error: no se puede dividir por 0";
 
-        return "La division de " + num1 + " / " + num2 + " = " + (num1 / num2);
+        return "La division de " + num1 + " / " + num2 + " = " + ((double) num1 / (double) num2);
     }
 
     public String order(int num1, int num2) {

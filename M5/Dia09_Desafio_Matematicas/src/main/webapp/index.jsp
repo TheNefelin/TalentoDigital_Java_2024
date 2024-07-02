@@ -9,8 +9,8 @@
     <meta charset="ISO-8859-1">
 
     <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     />
 
     <title>Desafio M5 Dia09</title>
@@ -18,7 +18,7 @@
 <body>
 
     <main class="container">
-        <%@include file="assets/html/calculadora.jsp"%>
+        <%@include file="assets/html/calculator.jsp"%>
     </main>
 
 </body>
