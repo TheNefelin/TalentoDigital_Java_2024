@@ -38,26 +38,26 @@ public class CalculatorService {
         }
     }
 
-    public String addition(int num1, int num2) {
+    private String addition(int num1, int num2) {
         return "La suma de " + num1 + " + " + num2 + " = " + (num1 + num2);
     }
 
-    public String subtraction(int num1, int num2) {
+    private String subtraction(int num1, int num2) {
         return "La resta de " + num1 + " - " + num2 + " = " + (num1 - num2);
     }
 
-    public String multiplication(int num1, int num2) {
+    private String multiplication(int num1, int num2) {
         return "La multiplicacion de " + num1 + " * " + num2 + " = " + (num1 * num2);
     }
 
-    public String division(int num1, int num2) {
+    private String division(int num1, int num2) {
         if (num2 == 0)
             return "Error: no se puede dividir por 0";
 
         return "La division de " + num1 + " / " + num2 + " = " + ((double) num1 / (double) num2);
     }
 
-    public String order(int num1, int num2) {
+    private String order(int num1, int num2) {
         if (num1 == num2)
             return "Los numeros " + num1 + " y " + num2 + " son iguales";
 
@@ -67,7 +67,7 @@ public class CalculatorService {
             return "El orden de los numeros es: " + num1 + ", " + num2;
     }
 
-    public String evenOdd(int num1, int num2) {
+    private String evenOdd(int num1, int num2) {
         String str = "";
 
         if (num1 % 2 == 0)
