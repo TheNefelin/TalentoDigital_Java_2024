@@ -21,27 +21,5 @@
         <%@include file="assets/html/calculadora.jsp"%>
     </main>
 
-    <dialog>
-        <article>
-            <h2>Confirm Your Membership</h2>
-            <p>
-                Thank you for signing up for a membership!
-                Please review the membership details below:
-            </p>
-            <ul>
-                <li>Membership: Individual</li>
-                <li>Price: $10</li>
-            </ul>
-            <footer>
-                <button id="btnCalc" className="secondary">
-                    Cancel
-                </button>
-                <button>Confirm</button>
-            </footer>
-        </article>
-    </dialog>
-
-    <script src="assets/js/modal.js"></script>
-
 </body>
 </html>

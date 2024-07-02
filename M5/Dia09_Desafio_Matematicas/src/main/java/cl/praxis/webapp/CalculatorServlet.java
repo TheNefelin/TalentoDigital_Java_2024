@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "CalculatorServlet", value = "/calculator-servlet")
 public class CalculatorServlet extends HttpServlet {
@@ -24,18 +23,11 @@ public class CalculatorServlet extends HttpServlet {
 
         req.setAttribute("strResponse", calculator.calculate(number1, number2, operation));
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
-
-        //resp.setContentType("text/html");
-        //PrintWriter out = resp.getWriter();
-        //out.println("<html><body>");
-        //out.println("<h1>" + calculator.calculate(number1, number2, operation) + "</h1>");
-        //out.println("</body></html>");
     }
 
     private int validateInt(String num) {
         if (num.isBlank())
             return 0;
-
         try {
             return Integer.parseInt(num);
         } catch (NumberFormatException e) {

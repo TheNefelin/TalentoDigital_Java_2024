@@ -3,10 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%
-  Calculator calculator = new Calculator();
-  String strResponse = (String) request.getAttribute("strResponse");
-%>
+<c:set var="operations" value="<%= new Calculator().getOperations().entrySet() %>"/>
 
 <h1>Calculadora</h1>
 
@@ -19,9 +16,9 @@
       <option selected disabled value="">
         Seleccióne una Operación
       </option>
-      <% for (Map.Entry<Integer, String> operation : calculator.getOperations().entrySet()) { %>
-      <option value="<%= operation.getKey() %>"><%= operation.getValue() %></option>
-      <% } %>
+      <c:forEach var="operation" items="${operations}">
+        <option value="${operation.key}">${operation.value}</option>
+      </c:forEach>
     </select>
   </fieldset>
 
@@ -30,5 +27,5 @@
 
 <article>
   <h2>Resultado</h2>
-  <p><%= strResponse != null ? strResponse : "" %></p>
+  <p><c:out value="${strResponse != null ? strResponse : ''}"/></p>
 </article>
