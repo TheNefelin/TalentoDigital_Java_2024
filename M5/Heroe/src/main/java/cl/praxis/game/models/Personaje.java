@@ -1,5 +1,6 @@
 package cl.praxis.game.models;
 
+import cl.praxis.game.classes.Genero;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

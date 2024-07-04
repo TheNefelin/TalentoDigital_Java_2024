@@ -1,7 +1,7 @@
 package cl.praxis.game.services;
 
 import cl.praxis.game.models.Personaje;
-import cl.praxis.game.models.Genero;
+import cl.praxis.game.classes.Genero;
 
 import java.util.ArrayList;
 import java.util.List;

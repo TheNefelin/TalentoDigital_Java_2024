@@ -1,4 +1,4 @@
-package cl.praxis.game.models;
+package cl.praxis.game.classes;
 
 public enum Genero {
     FEMENINO,

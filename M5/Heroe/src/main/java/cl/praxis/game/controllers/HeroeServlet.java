@@ -1,6 +1,6 @@
-package cl.praxis.game.servlets;
+package cl.praxis.game.controllers;
 
-import cl.praxis.game.models.Genero;
+import cl.praxis.game.classes.Genero;
 import cl.praxis.game.models.Personaje;
 import cl.praxis.game.services.ServicioHeroe;
 import jakarta.servlet.ServletException;
@@ -50,6 +50,7 @@ public class HeroeServlet extends HttpServlet {
         if (param.isBlank()) {
             return 0;
         }
+
         try {
             return Integer.parseInt(param);
         } catch (NumberFormatException e) {

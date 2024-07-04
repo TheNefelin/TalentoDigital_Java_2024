@@ -1,10 +1,10 @@
-<%@ page import="cl.praxis.game.models.Genero" %>
+<%@ page import="cl.praxis.game.classes.Genero" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <c:set var="generos" value="<%= Genero.values() %>"/>
 
-<form method="post" action="heroe-servlet">
+<form method="post" action="personaje-servlet">
     <h1>Nuevo Heroe</h1>
 
     <fieldset class="mb-0">

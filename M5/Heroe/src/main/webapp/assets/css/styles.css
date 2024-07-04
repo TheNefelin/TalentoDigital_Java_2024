@@ -1,10 +1,13 @@
 img {
-    height: 100%;
-    object-fit: cover;
+  height: 100%;
+  object-fit: cover;
 }
 
 header {
-    border: 1px solid white;
-    background-color: red;
-    color: aqua;
+  border-bottom: 1px solid white;
+  background-color: black;
+}
+
+.carousel-item > img {
+  object-fit: cover;
 }
