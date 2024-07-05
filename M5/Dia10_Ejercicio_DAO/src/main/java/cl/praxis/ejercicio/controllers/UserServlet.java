@@ -43,6 +43,7 @@ public class UserServlet extends HttpServlet {
     // Insert y Update
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String idStr = req.getParameter("id");
+        String isActiveStr = req.getParameter("isActive");
 
         int id = idStr.isEmpty() ? 0 : Integer.parseInt(idStr);
         String name = req.getParameter("name");
@@ -50,10 +51,17 @@ public class UserServlet extends HttpServlet {
         String email = req.getParameter("email");
         int age = Integer.parseInt(req.getParameter("age"));
 
-        if (id == 0)
-            userService.insert(new UserDTO(id, name, surname, email, age));
+        boolean isActive;
+
+        if (isActiveStr == null)
+            isActive = false;
         else
-            userService.update(new UserDTO(id, name, surname, email, age));
+            isActive = isActiveStr.isBlank() || isActiveStr.equals("on")? true: false;
+
+        if (id == 0)
+            userService.insert(new UserDTO(id, name, surname, email, age, isActive));
+        else
+            userService.update(new UserDTO(id, name, surname, email, age, isActive));
 
         //doGet(req, resp);
         resp.sendRedirect(req.getContextPath() + "/user-servlet");

@@ -15,6 +15,8 @@ public class UserService implements IUserService {
 
     @Override
     public List<UserDTO> getAll() {
+        List<UserDTO> users = userDAO.getAll();
+
         return userDAO.getAll();
     }
 

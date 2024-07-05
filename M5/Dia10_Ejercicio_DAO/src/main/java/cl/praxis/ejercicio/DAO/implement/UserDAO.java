@@ -13,10 +13,10 @@ import java.util.List;
 
 public class UserDAO implements IGenericDAO<UserDTO> {
     private Connection connection;
-    private final String USER_GET_ALL = "SELECT id, nombre, apellido, email, edad FROM usuarios";
-    private final String USER_GET_BYID = "SELECT id, nombre, apellido, email, edad FROM usuarios WHERE id = ?";
-    private final String USER_INSERT = "INSERT INTO usuarios (nombre, apellido, email, edad) VALUES (?, ?, ?, ?)";
-    private final String USER_UPDATE = "UPDATE usuarios SET nombre = ?, apellido = ?, email = ?, edad = ? WHERE id = ?";
+    private final String USER_GET_ALL = "SELECT id, nombre, apellido, email, edad, esActivo FROM usuarios";
+    private final String USER_GET_BYID = "SELECT id, nombre, apellido, email, edad, esActivo FROM usuarios WHERE id = ?";
+    private final String USER_INSERT = "INSERT INTO usuarios (nombre, apellido, email, edad, esActivo) VALUES (?, ?, ?, ?, ?)";
+    private final String USER_UPDATE = "UPDATE usuarios SET nombre = ?, apellido = ?, email = ?, edad = ?, esActivo = ? WHERE id = ?";
     private final String USER_DELETE = "DELETE FROM usuarios WHERE id = ?";
 
     public UserDAO() {
@@ -39,6 +39,7 @@ public class UserDAO implements IGenericDAO<UserDTO> {
                 user.setSurname(rs.getString("apellido"));
                 user.setEmail(rs.getString("email"));
                 user.setAge(rs.getInt("edad"));
+                user.setActive(rs.getBoolean("esActivo"));
 
                 users.add(user);
             }
@@ -65,6 +66,7 @@ public class UserDAO implements IGenericDAO<UserDTO> {
                 user.setSurname(rs.getString("apellido"));
                 user.setEmail(rs.getString("email"));
                 user.setAge(rs.getInt("edad"));
+                user.setActive(rs.getBoolean("esActivo"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -81,6 +83,7 @@ public class UserDAO implements IGenericDAO<UserDTO> {
             ps.setString(2, obj.getSurname());
             ps.setString(3, obj.getEmail());
             ps.setInt(4, obj.getAge());
+            ps.setBoolean(5, obj.isActive());
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
@@ -102,7 +105,8 @@ public class UserDAO implements IGenericDAO<UserDTO> {
             ps.setString(2, obj.getSurname());
             ps.setString(3, obj.getEmail());
             ps.setInt(4, obj.getAge());
-            ps.setInt(5, obj.getId());
+            ps.setBoolean(5, obj.isActive());
+            ps.setInt(6, obj.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

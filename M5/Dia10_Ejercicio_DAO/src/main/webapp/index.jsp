@@ -43,6 +43,12 @@
         <input type="number" class="form-control" id="age" name="age" aria-describedby="emailHelp" required
                value="${user != null ? user.age : ''}">
       </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input"
+               id="isActive" name="isActive"
+               <c:if test="${user.active}">checked</c:if>>
+        <label class="form-check-label" for="isActive">Usuario Activo</label>
+      </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -59,6 +65,7 @@
         <th scope="col">Apellido</th>
         <th scope="col">Email</th>
         <th scope="col">Edad</th>
+        <th scope="col">Activo</th>
         <th scope="col">Acciones</th>
       </tr>
       </thead>
@@ -70,6 +77,11 @@
           <td>${user.surname}</td>
           <td>${user.email}</td>
           <td>${user.age}</td>
+          <td>
+            <input type="checkbox" class="form-check-input"
+                   <c:if test="${user.active}">checked</c:if>
+            >
+          </td>
           <td>
             <a href="user-servlet?action=edit&id=${user.id}" class="btn btn-warning">Editar</a>
             <a href="user-servlet?action=delete&id=${user.id}" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">Eliminar</a>
