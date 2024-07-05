@@ -14,6 +14,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous">
 
+  <script src="https://kit.fontawesome.com/5499527a0e.js" crossorigin="anonymous"></script>
+
   <title>Desafío M5 Dia 11 Proveedores</title>
 </head>
 <body data-bs-theme="dark">

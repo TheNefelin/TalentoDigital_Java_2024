@@ -56,16 +56,60 @@ USE praxis;
 
 CREATE TABLE proveedores (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
-    rut VARCHAR(11) NOT null,
-    direccion VARCHAR(100) NOT null,
-    correo VARCHAR(50) NOT null,
-    telefono VARCHAR(15) NOT null,
-    contacto VARCHAR(50) NOT null,
-    telefono_contacto VARCHAR(15) NOT null
+	nombre VARCHAR(50) NOT NULL,
+	rut VARCHAR(11) NOT NULL,
+	direccion VARCHAR(100) NOT NULL,
+	correo VARCHAR(50) NOT NULL,
+	telefono INT NOT NULL,
+	contacto VARCHAR(50) NOT NULL,
+	telefono_contacto INT NOT NULL,
+    activo BIT NOT NULL
 );
 
-SELECT * FROM proveedores;
+SELECT 
+    id, 
+    nombre, 
+    rut, 
+    direccion, 
+    correo, 
+    telefono, 
+    contacto, 
+    telefono_contacto, 
+    activo 
+FROM proveedores;
+
+SELECT     
+    id, 
+    nombre, 
+    rut, 
+    direccion, 
+    correo, 
+    telefono, 
+    contacto, 
+    telefono_contacto, 
+    activo 
+FROM proveedores 
+WHERE 
+    id = 1;
+
+INSERT INTO proveedores
+    (nombre, rut, direccion, correo, telefono, contacto, telefono_contacto, activo)
+VALUES
+    ('Hisoka Morow', '666-6', 'Coliseo del Cielo', 'hizoka@hxh.jp', 666666666, 'Illumi Zoldyck', 555555555, 1);
+	
+UPDATE proveedores SET
+    nombre = 'Hisoka Morow', 
+    rut = '666-6', 
+    direccion = 'Coliseo del Cielo', 
+    correo = 'hizoka@hxh.jp', 
+    telefono = 666666666, 
+    contacto = 'Illumi Zoldyck', 
+    telefono_contacto = 555555555,
+    activo = 1
+WHERE
+    id = 3;
+	
+DELETE FROM proveedores WHERE id = 1;
 ```
 
 ### PostgreSQL

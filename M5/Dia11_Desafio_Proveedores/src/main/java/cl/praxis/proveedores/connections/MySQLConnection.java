@@ -11,7 +11,7 @@ public class MySQLConnection {
     private final String USER = "praxis";
     private final String PASS = "praxis";
     private final String DRIVER = "com.mysql.jdbc.Driver";
-    private Connection connection;
+    private final Connection connection;
 
     private MySQLConnection() {
         try {

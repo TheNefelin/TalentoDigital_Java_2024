@@ -12,7 +12,7 @@
 - [Dia06 Desafio Hotel](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia06_Desafio_Hotel) (Jakarta Web Application)
 - [Dia08 Ejercicio Login](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia08_Ejercicio_Login) (Jakarta Web Application)
 - [Dia09 Desafio Matematicas](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia09_Desafio_Matematicas) (Jakarta Web Application)
-- [Dia10 Ejercicio DAO](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia10_Ejercicio_DAO) (Jakarta Web Application)
+- [Dia10 11 y 12 Ejercicio DAO](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia10_Ejercicio_DAO) (Jakarta Web Application)
 - [Dia11 Desafio Proveedores](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia11_Desafio_Proveedores) (Jakarta Web Application)
 - [Heroe](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Heroe) (Jakarta WebApp Servlet)
 

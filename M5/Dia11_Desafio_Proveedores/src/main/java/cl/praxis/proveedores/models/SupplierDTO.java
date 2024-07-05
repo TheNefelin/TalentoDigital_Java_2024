@@ -15,7 +15,8 @@ public class SupplierDTO {
     public String rut;
     public String address;
     public String email;
-    public String phone;
+    public int phone;
     public String contact;
-    public String contactPhone;
+    public int contactPhone;
+    public boolean isActive;
 }
