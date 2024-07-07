@@ -1,11 +1,11 @@
-package cl.praxis.proveedores.connections;
+package cl.praxis.mvc.connections;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class MySQLConnection implements IDBConnection {
-    private static MySQLConnection instance;
+public class MySqlConnection implements IDBConnection {
+    private static MySqlConnection instance;
     private final String HOST = "jdbc:mysql://localhost:3306/";
     private final String DATABASE = "praxis";
     private final String USER = "praxis";
@@ -13,7 +13,7 @@ public class MySQLConnection implements IDBConnection {
     private final String DRIVER = "com.mysql.jdbc.Driver";
     private final Connection connection;
 
-    private MySQLConnection() {
+    private MySqlConnection() {
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(HOST.concat(DATABASE), USER, PASS);
@@ -22,13 +22,13 @@ public class MySQLConnection implements IDBConnection {
         }
     }
 
-    public static MySQLConnection getInstance() {
+    public static MySqlConnection getInstance() {
         if (instance == null) {
-            instance = new MySQLConnection();
+            instance = new MySqlConnection();
         } else {
             try {
                 if (instance.getConnection().isClosed()) {
-                    instance = new MySQLConnection();
+                    instance = new MySqlConnection();
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
