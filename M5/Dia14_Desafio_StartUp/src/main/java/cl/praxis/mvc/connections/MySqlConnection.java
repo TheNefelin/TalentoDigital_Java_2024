@@ -10,7 +10,7 @@ public class MySqlConnection implements IDBConnection {
     private final String DATABASE = "praxis";
     private final String USER = "praxis";
     private final String PASS = "praxis";
-    private final String DRIVER = "com.mysql.jdbc.Driver";
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final Connection connection;
 
     private MySqlConnection() {
