@@ -10,6 +10,31 @@ taskkill /pid <pid number> /f
 ### Dependencias
 * [Link Repositorio](https://mvnrepository.com/)
 ```
+<!-- Testing -->
+<!-- JUnit 5 API dependency for writing tests -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.10.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- JUnit 5 Engine dependency for running tests -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.10.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- Mockito dependency for mocking objects in tests -->
+<dependency>
+<groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <version>5.12.0</version>
+    <scope>test</scope>
+</dependency>
+        
 <!-- Lombok -->
 <dependency>
     <groupId>org.projectlombok</groupId>

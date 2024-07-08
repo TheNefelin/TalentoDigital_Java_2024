@@ -4,13 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class MySQLConnection implements IDBConnection {
     private static MySQLConnection instance;
     private final String HOST = "jdbc:mysql://localhost:3306/";
     private final String DATABASE = "praxis";
     private final String USER = "praxis";
     private final String PASS = "praxis";
-    private final String DRIVER = "com.mysql.jdbc.Driver";
+    private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private final Connection connection;
 
     private MySQLConnection() {
