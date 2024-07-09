@@ -8,7 +8,7 @@
          id="id" name="id"
          value="${supplier != null ? supplier.id : "" }">
 
-  <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-3 ">
     <div class="mb-3 col">
       <label for="name" class="form-label">Nombre</label>
       <input type="text" class="form-control" required
