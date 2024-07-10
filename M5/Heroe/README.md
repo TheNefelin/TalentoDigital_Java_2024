@@ -7,9 +7,47 @@ netstat -ano
 taskkill /pid <pid number> /f
 ```
 
+### tomcat deploy
+```
+// archivo en config de tomcat
+tomcat-users.xml
+
+// descomentar esta linea y cambiar la clave
+<!--
+  <user username="admin" password="<must-be-changed>" roles="manager-gui"/>
+  <user username="robot" password="<must-be-changed>" roles="manager-script"/>
+-->
+```
+
 ### Dependencias
 * [Link Repositorio](https://mvnrepository.com/)
 ```
+<!-- Testing -->
+<!-- JUnit 5 API dependency for writing tests -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.10.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- JUnit 5 Engine dependency for running tests -->
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-engine</artifactId>
+    <version>5.10.2</version>
+    <scope>test</scope>
+</dependency>
+
+<!-- Mockito dependency for mocking objects in tests -->
+<dependency>
+<groupId>org.mockito</groupId>
+    <artifactId>mockito-junit-jupiter</artifactId>
+    <version>5.12.0</version>
+    <scope>test</scope>
+</dependency>
+        
+<!-- Lombok -->
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
@@ -17,7 +55,7 @@ taskkill /pid <pid number> /f
     <scope>provided</scope>
 </dependency>
 
-// En el JSP => <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<!--JSPL => <%@ taglib prefix="c" uri="jakarta.tags.core" %> -->
 <dependency>
     <groupId>jakarta.servlet.jsp.jstl</groupId>
     <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
@@ -29,14 +67,14 @@ taskkill /pid <pid number> /f
     <version>3.0.1</version>
 </dependency>
 
-// PostreSQL
+<!-- PostreSQL -->
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <version>42.7.3</version>
 </dependency>
 
-// MySQL
+<!-- MySQL -->
 <dependency>
     <groupId>com.mysql</groupId>
     <artifactId>mysql-connector-j</artifactId>
@@ -46,11 +84,10 @@ taskkill /pid <pid number> /f
 
 ### MySQL crear usuario
 ```
-CREATE USER 'praxis@localhost' IDENTIFIED BY 'praxis';
+CREATE USER 'praxis'@'localhost' IDENTIFIED BY 'praxis';
+GRANT CREATE, ALTER, DROP ON *.* TO 'praxis'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO 'praxis'@'localhost';
 
-GRANT CREATE, ALTER, DROP  
-ON praxis.* TO 'praxis@localhost';
-
-GRANT SELECT, INSERT, UPDATE, DELETE  
-ON praxis.* TO 'praxis@localhost';
+CREATE DATABASE praxis;
+USE praxis;
 ```

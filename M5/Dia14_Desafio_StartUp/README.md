@@ -88,6 +88,21 @@ CREATE TABLE usuarios_roles (
     CONSTRAINT fk_this_roles FOREIGN KEY (id_usuario) REFERENCES roles(id)
 );
 
+CREATE TABLE proveedores (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE autos (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    url VARCHAR(256) NOT NULL,
+    id_usuario INT NOT NULL,
+    id_proveedor INT NOT NULL,
+    CONSTRAINT fk_auto_usuario FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+	CONSTRAINT fk_auto_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedores(id)
+);
+
 INSERT INTO usuarios
     (correo, clave, nombre, apodo, peso)
 VALUES
@@ -96,9 +111,8 @@ VALUES
 INSERT INTO roles
     (nombre)
 VALUES
-    ('Sistema'),
-    ('Administrador'),
-    ('Usuario');
+    ('Admin'),
+    ('Trabajador');
     
 INSERT INTO usuarios_roles
     (id_usuario, id_rol)
@@ -112,8 +126,10 @@ SELECT id_usuario, id_rol FROM usuarios_roles;
 SELECT COUNT(*) FROM usuarios WHERE correo = 'netero@hxh.cl' AND clave = '123456';
 
 DROP TABLE usuarios_roles;
+DROP TABLE autos;
 DROP TABLE direcciones;
 DROP TABLE roles;
 DROP TABLE usuarios;
+DROP TABLE proveedores;
 ```
 
