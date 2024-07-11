@@ -1,0 +1,15 @@
+.login {
+    max-width: 500px;
+}
+
+.my-img > img {
+    width: 5rem;
+    height: 100%;
+    object-fit: contain;
+}
+
+#car-image {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}

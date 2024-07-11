@@ -1,11 +1,12 @@
 package cl.praxis.mvc.services;
 
-import cl.praxis.mvc.utils.SqlResponse;
+import cl.praxis.mvc.utils.ServiceResponse;
 import cl.praxis.mvc.models.UserDTO;
 
+import java.util.List;
+
 public interface IUserService {
-
-    public SqlResponse<UserDTO> addUser(UserDTO dto, String password);
-    public SqlResponse<UserDTO> loginUser(String email, String password);
-
+    public ServiceResponse<List<UserDTO>> getAllUser();
+    public ServiceResponse<UserDTO> addUser(UserDTO dto);
+    public ServiceResponse<UserDTO> loginUser(String email, String password);
 }

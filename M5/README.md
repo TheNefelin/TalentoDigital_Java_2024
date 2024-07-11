@@ -15,7 +15,7 @@
 - [Dia10 11 y 12 Ejercicio DAO](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia10_Ejercicio_DAO) (Jakarta Web Application)
 - [Dia11 Desafio Proveedores](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia11_Desafio_Proveedores) (Jakarta Web Application)
 - [Dia14 Desafio StartUp](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia14_Desafio_StartUp) (MVC Jakarta Web Application)
-- [Heroe](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Heroe) (Jakarta WebApp Servlet)
+- [Dia16 Prueba](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia16_Prueba) (MVC Jakarta Web Application)
 
 ### New project
 - Jakarta EE

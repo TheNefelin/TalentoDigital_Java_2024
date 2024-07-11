@@ -27,13 +27,13 @@
         <p class="card-text text-center">Inicia Sesión o Regístrate!</p>
         <div class="text-center">
           <a href="login.jsp" class="btn btn-primary">Iniciar Sesión</a>
-          <a href="register.jsp" class="btn btn-primary">Regístrate</a>
+          <a href="register_servlet" class="btn btn-primary">Regístrate</a>
         </div>
       </div>
 
     </div>
   </main>
 
-  <%@include file="assets/components/bootstrap_css.jsp"%>
+  <%@include file="assets/components/bootstrap_js.jsp"%>
 </body>
 </html>
