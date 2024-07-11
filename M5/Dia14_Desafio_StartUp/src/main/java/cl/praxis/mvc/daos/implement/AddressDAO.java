@@ -17,7 +17,7 @@ public class AddressDAO implements IAddressDAO {
         try {
             String INSERT = "INSERT INTO direcciones (nombre, numero, id_usuario) VALUES (?, ?, ?);";
 
-            PreparedStatement ps = connection.prepareStatement(INSERT);
+            PreparedStatement ps = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
             ps.setString(1, addressDTO.getAddressName());
             ps.setInt(2, addressDTO.getAddressNumber());
             ps.setInt(3, addressDTO.getIdUser());

@@ -63,7 +63,7 @@ public class UserService implements IUserService {
         addressDTO.setAddressNumber(userDTO.getAddressNumber());
         addressDTO.setIdUser(userDTO.getId());
 
-        addressDAO.add(addressDTO); // se guarda la direccion
+        addressDTO = addressDAO.add(addressDTO); // se guarda la direccion
 
         if (addressDTO.getId() == 0) {
             serviceResponse.setMsg(serviceResponse.getMsg() + " - (Usuario Creado Sin Direccion)");
