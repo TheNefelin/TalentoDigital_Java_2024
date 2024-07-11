@@ -16,14 +16,14 @@
 </header>
 
   <main class="container my-4">
-    <div class="card">
+    <div class="login m-auto card">
 
       <div class="card-header">
         Iniciar Sesión
       </div>
 
       <form method="post" action="login-servlet" class="m-4">
-        <div class="row row-cols-1 row-cols-md-2">
+        <div class="row row-cols-1">
           <div class="mb-3 col">
             <label for="email" class="form-label">Correo</label>
             <input type="email" class="form-control" aria-describedby="emailHelp" required
@@ -36,9 +36,15 @@
           </div>
         </div>
 
-        <c:if test="${response.isError()}">
+        <c:if test="${user.isError()}">
           <div class="alert alert-danger" role="alert">
-              ${response.msg}
+              ${user.msg}
+          </div>
+        </c:if>
+
+        <c:if test="${!user.isError() && user.msg != null}">
+          <div class="alert alert-success" role="alert">
+              ${user.msg}
           </div>
         </c:if>
 
@@ -48,6 +54,6 @@
     </div>
   </main>
 
-  <%@include file="assets/components/bootstrap_css.jsp"%>
+  <%@include file="assets/components/bootstrap_js.jsp"%>
 </body>
 </html>

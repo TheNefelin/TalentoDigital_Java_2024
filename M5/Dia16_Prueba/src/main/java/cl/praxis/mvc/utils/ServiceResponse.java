@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SqlResponse<T> {
+public class ServiceResponse<T> {
     private boolean error;
     private String msg;
     private T obj;
