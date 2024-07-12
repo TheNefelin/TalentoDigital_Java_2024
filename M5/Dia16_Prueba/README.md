@@ -1,5 +1,12 @@
 # Desafio M5 Dia 14 MVC
 
+### cmd
+```
+cmd
+netstat -ano
+taskkill /pid <pid number> /f
+```
+
 ### Dependencias
 * [Link Repositorio](https://mvnrepository.com/)
 ```
@@ -57,16 +64,16 @@ USE praxis;
 
 -- DDL
 CREATE TABLE proveedores (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE autos (
-	id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     url VARCHAR(256) NOT NULL,
     id_proveedor INT NOT NULL,
-	CONSTRAINT fk_auto_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedores(id)
+    CONSTRAINT fk_auto_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedores(id)
 );
 
 CREATE TABLE usuarios (
@@ -120,16 +127,16 @@ VALUES
 INSERT INTO autos
     (nombre, url, id_proveedor)
 VALUES     
-   ('Toyota Corolla', 'Toyota_Corolla.jpg', 1),
-   ('Volkswagen Golf', 'Volkswagen_Golf.jpg', 2),
-   ('Ford Mustang', 'Ford_Mustang.jpg', 3),
-   ('Chevrolet Camaro', 'Chevrolet_Camaro.jpg', 4),
-   ('Honda Civic', 'Honda_Civic.jpg', 5),
-   ('Nissan Altima', 'Nissan_Altima.jpg', 6),
-   ('BMW Serie 3', 'BMW_Serie3.webp', 7),
-   ('Mercedes-Benz Clase C', 'Mercedes-Benz_ClaseC.jpeg', 8),
-   ('Hyundai Elantra', 'Hyundai_Elantra.jpg', 9),
-   ('Kia Optima', 'Kia_Optima.jpg', 10);
+    ('Toyota Corolla', 'Toyota_Corolla.jpg', 1),
+    ('Volkswagen Golf', 'Volkswagen_Golf.jpg', 2),
+    ('Ford Mustang', 'Ford_Mustang.jpg', 3),
+    ('Chevrolet Camaro', 'Chevrolet_Camaro.jpg', 4),
+    ('Honda Civic', 'Honda_Civic.jpg', 5),
+    ('Nissan Altima', 'Nissan_Altima.jpg', 6),
+    ('BMW Serie 3', 'BMW_Serie3.webp', 7),
+    ('Mercedes-Benz Clase C', 'Mercedes-Benz_ClaseC.jpeg', 8),
+    ('Hyundai Elantra', 'Hyundai_Elantra.jpg', 9),
+    ('Kia Optima', 'Kia_Optima.jpg', 10);
    
 INSERT INTO usuarios
     (correo, clave, nombre, apodo, peso, id_auto)
@@ -154,7 +161,7 @@ VALUES
 INSERT INTO usuarios_roles
     (id_usuario, id_rol)
 VALUES
-	(1, 1),
+    (1, 1),
     (2, 2),
     (3, 2),
     (4, 2),
@@ -166,7 +173,7 @@ VALUES
     (10, 2);
 
 INSERT INTO direcciones 
-	(nombre, numero, id_usuario) 
+    (nombre, numero, id_usuario) 
 VALUES
     ('Calle Siempre Viva', 742, 1),
     ('Avenida Libertador', 123, 2),
@@ -179,10 +186,20 @@ VALUES
     ('Plaza de la Victoria', 404, 9),
     ('Calle de los Sueños', 505, 10);
 
-SELECT COUNT(id) FROM usuarios WHERE correo = 'netero@hxh.cl' AND clave = '123456';
-SELECT id, nombre, url, id_proveedor FROM autos;
+SELECT
+    COUNT(id) 
+FROM usuarios 
+WHERE 
+    correo = 'netero@hxh.cl' AND clave = '123456';
+
 SELECT 
-	a.id, 
+    id, 
+    nombre, 
+    url, id_proveedor
+FROM autos;
+
+SELECT 
+    a.id, 
     a.correo, 
     a.clave, 
     a.nombre, 
@@ -194,14 +211,14 @@ SELECT
     c.nombre AS rol,
     d.url
 FROM usuarios a
-	LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
+    LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
     LEFT JOIN roles c ON c.id = b.id_rol
     LEFT JOIN autos d ON d.id = a.id_auto
     LEFT JOIN address e ON e.id_uusario = a.id
 ORDER BY a.id;
 
 SELECT 
-	a.id, 
+    a.id, 
     a.correo, 
     a.nombre, 
     a.apodo, 
@@ -209,7 +226,7 @@ SELECT
     a.fecha_creacion, 
     a.fecha_modificacion,
     c.id AS idRol,
-	c.nombre AS rol, 
+    c.nombre AS rol, 
     d.id AS idAuto,
     d.nombre AS auto,
     d.url,
@@ -217,15 +234,31 @@ SELECT
     e.nombre AS direccion,
     e.numero
 FROM usuarios a 
-	LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
+    LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
     LEFT JOIN roles c ON c.id = b.id_rol
     LEFT JOIN autos d ON d.id = a.id_auto
-	LEFT JOIN direcciones e ON e.id_usuario = a.id
-WHERE correo = 'netero@hxh.cl' AND clave = '123456';
-SELECT id, nombre FROM roles;
-SELECT id, nombre, numero, id_usuario FROM direcciones;
+    LEFT JOIN direcciones e ON e.id_usuario = a.id
+WHERE
+    correo = 'netero@hxh.cl' AND clave = '123456';
 
-SELECT id, nombre, url, id_proveedor FROM autos;
+SELECT 
+    id, 
+    nombre 
+FROM roles;
+
+SELECT 
+    id, 
+    nombre, 
+    numero, 
+    id_usuario 
+FROM direcciones;
+
+SELECT 
+    id, 
+    nombre, 
+    url, 
+    id_proveedor 
+FROM autos;
 
 DROP TABLE usuarios_roles;
 DROP TABLE roles;
@@ -234,4 +267,3 @@ DROP TABLE usuarios;
 DROP TABLE autos;
 DROP TABLE proveedores;
 ```
-
