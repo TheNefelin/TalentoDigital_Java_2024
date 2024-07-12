@@ -86,4 +86,7 @@
 - [Dia14 Desafio StartUp](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia14_Desafio_StartUp) (MVC Jakarta Web Application)
 - [Dia16 Prueba](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia16_Prueba) (MVC Jakarta Web Application)
 
+## Projects list [Module 6](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6)
+
+- [Dia01 Mi Primer Spring](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M5/Dia01_MiPrimerSpring) (Spring Boot)
 
