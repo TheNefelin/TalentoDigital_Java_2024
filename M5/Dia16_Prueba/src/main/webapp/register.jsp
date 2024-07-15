@@ -21,7 +21,7 @@
         Registrarse
       </div>
 
-      <c:if test="${user.isError()}">
+      <c:if test="${user.error}">
         <div class="alert alert-danger m-4" role="alert">
             ${user.msg}
         </div>
@@ -41,7 +41,7 @@
 
             <select id="id_rol" name="id_rol" class="form-select mb-3" aria-label="Default select example" required>
               <option selected disabled value="">Seleccione un Rol</option>
-              <c:forEach var="rol" items="${roles.getObj()}">
+              <c:forEach var="rol" items="${roles.obj}">
                 <option value="${rol.id}">${rol.name}</option>
               </c:forEach>
             </select>
@@ -66,7 +66,7 @@
           <div class="mb-3 col">
             <select id="id_car" name="id_car" onchange="updateCarImage()" class="form-select" aria-label="Default select example" required>
               <option selected disabled value="">Seleccione un Auto</option>
-              <c:forEach var="car" items="${cars.getObj()}">
+              <c:forEach var="car" items="${cars.obj}">
                 <option value="${car.id}" data-url="${car.url}">${car.name}</option>
               </c:forEach>
             </select>

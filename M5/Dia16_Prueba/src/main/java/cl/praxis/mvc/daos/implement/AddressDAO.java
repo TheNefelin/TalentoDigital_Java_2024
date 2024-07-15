@@ -18,8 +18,8 @@ public class AddressDAO implements IAddressDAO {
             String INSERT = "INSERT INTO direcciones (nombre, numero, id_usuario) VALUES (?, ?, ?);";
 
             PreparedStatement ps = connection.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
-            ps.setString(1, addressDTO.getAddressName());
-            ps.setInt(2, addressDTO.getAddressNumber());
+            ps.setString(1, addressDTO.getName());
+            ps.setInt(2, addressDTO.getNumber());
             ps.setInt(3, addressDTO.getIdUser());
 
             int rowsAffected = ps.executeUpdate();

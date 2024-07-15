@@ -2,8 +2,7 @@ package cl.praxis.mvc.daos.implement;
 
 import cl.praxis.mvc.connections.MySqlConnection;
 import cl.praxis.mvc.daos.IUserDAO;
-import cl.praxis.mvc.models.RolDTO;
-import cl.praxis.mvc.models.UserDTO;
+import cl.praxis.mvc.models.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,30 +18,32 @@ public class UserDAO implements IUserDAO {
     public List<UserDTO> getAll() {
         List<UserDTO> list = new ArrayList<>();
 
-        String SELECT_ALL = "" +
-            "SELECT" +
+        String SELECT_ALL =
+            "SELECT " +
             "   a.id, " +
             "   a.correo, " +
-            //"a.clave, " +
+            //"   a.clave, " +
             "   a.nombre, " +
             "   a.apodo, " +
             "   a.peso, " +
             "   a.fecha_creacion, " +
             "   a.fecha_modificacion, " +
-            "   c.id AS idRol, " +
-            "   c.nombre AS rol, " +
-            "   d.id AS idAuto, " +
-            "   d.nombre AS auto, " +
-            "   d.url, " +
-            "   e.id AS idDireccion, " +
-            "   e.nombre AS direccion, " +
-            "   e.numero " +
+            "   b.id AS id_direccion, " +
+            "   b.nombre AS direccion, " +
+            "   b.numero, " +
+            "   d.id AS id_rol, " +
+            "   d.nombre AS rol, " +
+            "   e.id AS id_auto, " +
+            "   e.nombre AS auto, " +
+            "   e.url, " +
+            "   f.id AS id_proveedor, " +
+            "   f.nombre AS proveedor " +
             "FROM usuarios a " +
-            "   LEFT JOIN usuarios_roles b ON a.id = b.id_usuario " +
-            "   LEFT JOIN roles c ON c.id = b.id_rol " +
-            "   LEFT JOIN autos d ON d.id = a.id_auto " +
-            "   LEFT JOIN direcciones e ON e.id_usuario = a.id " +
-            "ORDER BY a.id;";
+            "   LEFT JOIN direcciones b ON b.id_usuario = a.id " +
+            "   LEFT JOIN usuarios_roles c ON c.id_usuario = a.id " +
+            "   LEFT JOIN roles d ON d.id = c.id_rol " +
+            "   LEFT JOIN autos e ON e.id = a.id_auto " +
+            "   LEFT JOIN proveedores f ON f.id = e.id_proveedor;";
 
         try {
             PreparedStatement ps = connection.prepareStatement(SELECT_ALL);
@@ -71,7 +72,7 @@ public class UserDAO implements IUserDAO {
             ps.setString(3, dto.getName());
             ps.setString(4, dto.getNick());
             ps.setInt(5, dto.getWeight());
-            ps.setInt(6, dto.getIdCar());
+            ps.setInt(6, dto.getCar().getId());
 
             int rowsAffected = ps.executeUpdate();
 
@@ -112,29 +113,32 @@ public class UserDAO implements IUserDAO {
         UserDTO user = null;
 
         try {
-            String CHECK_LOGIN = "" +
-                "SELECT" +
+            String CHECK_LOGIN =
+                "SELECT " +
                 "   a.id, " +
                 "   a.correo, " +
-                 //"a.clave, " +
+                //"   a.clave, " +
                 "   a.nombre, " +
                 "   a.apodo, " +
                 "   a.peso, " +
                 "   a.fecha_creacion, " +
                 "   a.fecha_modificacion, " +
-                "   c.id AS idRol, " +
-                "   c.nombre AS rol, " +
-                "   d.id AS idAuto, " +
-                "   d.nombre AS auto, " +
-                "   d.url, " +
-                "   e.id AS idDireccion, " +
-                "   e.nombre AS direccion, " +
-                "   e.numero " +
+                "   b.id AS id_direccion, " +
+                "   b.nombre AS direccion, " +
+                "   b.numero, " +
+                "   d.id AS id_rol, " +
+                "   d.nombre AS rol, " +
+                "   e.id AS id_auto, " +
+                "   e.nombre AS auto, " +
+                "   e.url, " +
+                "   f.id AS id_proveedor, " +
+                "   f.nombre AS proveedor " +
                 "FROM usuarios a " +
-                "   LEFT JOIN usuarios_roles b ON a.id = b.id_usuario " +
-                "   LEFT JOIN roles c ON c.id = b.id_rol " +
-                "   LEFT JOIN autos d ON d.id = a.id_auto " +
-                "   LEFT JOIN direcciones e ON e.id_usuario = a.id " +
+                "   LEFT JOIN direcciones b ON b.id_usuario = a.id " +
+                "   LEFT JOIN usuarios_roles c ON c.id_usuario = a.id " +
+                "   LEFT JOIN roles d ON d.id = c.id_rol " +
+                "   LEFT JOIN autos e ON e.id = a.id_auto " +
+                "   LEFT JOIN proveedores f ON f.id = e.id_proveedor " +
                 "WHERE correo = ? AND clave = ?;";
 
             PreparedStatement ps = connection.prepareStatement(CHECK_LOGIN);
@@ -153,8 +157,25 @@ public class UserDAO implements IUserDAO {
     }
 
     private UserDTO mapUserDTO(ResultSet rs) throws SQLException {
-        UserDTO user = new UserDTO();
+        AddressDTO addressDTO = new AddressDTO();
+        addressDTO.setId(rs.getInt("id_direccion"));
+        addressDTO.setName(rs.getString("direccion"));
+        addressDTO.setNumber(rs.getInt("numero"));
 
+        RolDTO rolDTO = new RolDTO();
+        rolDTO.setId(rs.getInt("id_rol"));
+        rolDTO.setName(rs.getString("rol"));
+
+        CarDTO carDTO = new CarDTO();
+        carDTO.setId(rs.getInt("id_auto"));
+        carDTO.setName(rs.getString("auto"));
+        carDTO.setUrl(rs.getString("url"));
+
+        SupplierDTO supplierDTO = new SupplierDTO();
+        supplierDTO.setId(rs.getInt("id_proveedor"));
+        supplierDTO.setName(rs.getString("proveedor"));
+
+        UserDTO user = new UserDTO();
         user.setId(rs.getInt("id"));
         user.setEmail(rs.getString("correo"));
         user.setName(rs.getString("nombre"));
@@ -162,14 +183,10 @@ public class UserDAO implements IUserDAO {
         user.setWeight(rs.getInt("peso"));
         user.setDate_create(rs.getDate("fecha_creacion"));
         user.setDate_update(rs.getDate("fecha_modificacion"));
-        user.setIdRol(rs.getInt("idRol"));
-        user.setRol(rs.getString("rol"));
-        user.setIdCar(rs.getInt("idAuto"));
-        user.setCar(rs.getString("auto"));
-        user.setUrl(rs.getString("url"));
-        user.setIdAddress(rs.getInt("idDireccion"));
-        user.setAddress(rs.getString("direccion"));
-        user.setAddressNumber(rs.getInt("numero"));
+        user.setAddress(addressDTO);
+        user.setRol(rolDTO);
+        user.setCar(carDTO);
+        user.setSupplier(supplierDTO);
 
         return user;
     }

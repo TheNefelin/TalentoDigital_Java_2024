@@ -36,13 +36,13 @@
           </div>
         </div>
 
-        <c:if test="${user.isError()}">
+        <c:if test="${user.error}">
           <div class="alert alert-danger" role="alert">
               ${user.msg}
           </div>
         </c:if>
 
-        <c:if test="${!user.isError() && user.msg != null}">
+        <c:if test="${!user.error && user.msg != null}">
           <div class="alert alert-success" role="alert">
               ${user.msg}
           </div>

@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 public class AddressDTO {
     private int id;
-    private String addressName;
-    private int addressNumber;
+    private String name;
+    private int number;
     private int idUser;
 }

@@ -22,7 +22,7 @@
         Home
       </div>
 
-      <h3 class="text-center m-2">${user.getMsg()}</h3>
+      <h3 class="text-center m-2">${user.msg}</h3>
       <hr>
 
       <section class="row row-cols-1 row-cols-md-2">
@@ -33,8 +33,8 @@
             <div class="card m-auto" style="width: 18rem;">
               <img src="assets/img/Yo.png" class="card-img-top" alt="img perfil">
               <div class="card-body">
-                <h5 class="card-title">${user.obj.getName()}</h5>
-                <h5 class="card-title">${user.obj.getEmail()}</h5>
+                <h5 class="card-title">${user.obj.name}</h5>
+                <h5 class="card-title">${user.obj.email}</h5>
                 <a href="#" class="btn btn-primary m-2">Cerrar Sesion</a>
               </div>
             </div>
@@ -52,7 +52,7 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach var="supplier" items="${suppliers.getObj()}">
+            <c:forEach var="supplier" items="${suppliers.obj}">
               <tr>
                 <th scope="row">${supplier.id}</th>
                 <td>${supplier.name}</td>
@@ -76,28 +76,26 @@
           <th scope="col">#</th>
           <th scope="col">Correo</th>
           <th scope="col">Nombre</th>
-          <th scope="col">Apodo</th>
-          <th scope="col">Peso</th>
-          <th scope="col">Creacion</th>
-          <th scope="col">Actualizado</th>
+          <th scope="col">Dirección</th>
           <th scope="col">Rol</th>
           <th scope="col">Auto</th>
+          <th scope="col">Img</th>
+          <th scope="col">Proveedor</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach var="user" items="${users.getObj()}">
+        <c:forEach var="user" items="${users.obj}">
           <tr>
             <th scope="row">${user.id}</th>
             <td>${user.email}</td>
             <td>${user.name}</td>
-            <td>${user.nick}</td>
-            <td>${user.weight}</td>
-            <td>${user.date_create}</td>
-            <td>${user.date_update}</td>
-            <td>${user.rol}</td>
+            <td>${user.address.name}</td>
+            <td>${user.rol.name}</td>
+            <td>${user.car.name}</td>
             <td class="my-img">
-              <img src="assets/img/${user.url}" class="img" alt="auto">
+              <img src="assets/img/${user.car.url}" class="img rounded" alt="auto">
             </td>
+            <td>${user.supplier.name}</td>
           </tr>
         </c:forEach>
         </tbody>

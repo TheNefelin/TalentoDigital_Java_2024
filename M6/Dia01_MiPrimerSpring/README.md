@@ -1,6 +1,6 @@
 # Spring Boot
 
-Empaquetado JAR es para Java
+Empaquetado JAR es para Java <br>
 Empaquetado WAR es para Web
 
 [Spring Boot Samples](https://spring.io/projects/spring-boot#samples) <br>
@@ -14,23 +14,41 @@ Empaquetado WAR es para Web
 * Packaging War (for web)
 ```
 
-### Dependency Spring Boot 3.3.2 (SNAPSHOT)
-```
-- Developer Tools
+### Dependency, Spring Boot: 3.3.2 (SNAPSHOT)
+- Developer Tools:
     * Spring Boot DevTools
     * Lombok
-- Web
+- Web:
     * Spring Web
     * Rest Repositories
     * Spring Web Services
-- Template Engines
+- Template Engines:
     * Thymeleaf
-- SQL
+- SQL:
     * Spring Data JPA
     * MySql Driver
-```
 
 ### Config DB
 * resource => application.properties
 ```
+spring.mvc.view.prefix=/templates/
+
+# MySQL Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/praxis?useSSL=false&serverTimezone=UTC
+spring.datasource.username=praxis
+spring.datasource.password=praxis
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
+# Hibernate Configuration
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.format_sql=true
+```
+
+### TaskKill
+```
+cmd
+netstat -ano
+taskkill /pid <pid-number> /f
 ```

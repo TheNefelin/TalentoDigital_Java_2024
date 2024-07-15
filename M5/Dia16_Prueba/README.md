@@ -120,7 +120,7 @@ VALUES
     ('Honda'), 
     ('Nissan'), 
     ('BMW'), 
-    ('Mercedes-Benz'), 
+    ('Mercedes Benz'), 
     ('Hyundai'), 
     ('Kia');
 
@@ -134,7 +134,7 @@ VALUES
     ('Honda Civic', 'Honda_Civic.jpg', 5),
     ('Nissan Altima', 'Nissan_Altima.jpg', 6),
     ('BMW Serie 3', 'BMW_Serie3.webp', 7),
-    ('Mercedes-Benz Clase C', 'Mercedes-Benz_ClaseC.jpeg', 8),
+    ('Mercedes Benz Clase C', 'Mercedes-Benz_ClaseC.jpeg', 8),
     ('Hyundai Elantra', 'Hyundai_Elantra.jpg', 9),
     ('Kia Optima', 'Kia_Optima.jpg', 10);
    
@@ -186,79 +186,67 @@ VALUES
     ('Plaza de la Victoria', 404, 9),
     ('Calle de los Sueños', 505, 10);
 
-SELECT
-    COUNT(id) 
-FROM usuarios 
-WHERE 
-    correo = 'netero@hxh.cl' AND clave = '123456';
-
 SELECT 
-    id, 
-    nombre, 
-    url, id_proveedor
-FROM autos;
-
-SELECT 
-    a.id, 
-    a.correo, 
-    a.clave, 
-    a.nombre, 
-    a.apodo, 
-    a.peso, 
-    a.fecha_creacion, 
+    a.id,
+    a.correo,
+    a.clave,
+    a.nombre,
+    a.apodo,
+    a.peso,
+    a.fecha_creacion,
     a.fecha_modificacion,
-    a.id_auto,
-    c.nombre AS rol,
-    d.url
-FROM usuarios a
-    LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
-    LEFT JOIN roles c ON c.id = b.id_rol
-    LEFT JOIN autos d ON d.id = a.id_auto
-    LEFT JOIN address e ON e.id_uusario = a.id
-ORDER BY a.id;
-
-SELECT 
-    a.id, 
-    a.correo, 
-    a.nombre, 
-    a.apodo, 
-    a.peso, 
-    a.fecha_creacion, 
-    a.fecha_modificacion,
-    c.id AS idRol,
-    c.nombre AS rol, 
-    d.id AS idAuto,
-    d.nombre AS auto,
-    d.url,
-    e.id AS idDireccion,
-    e.nombre AS direccion,
-    e.numero
+    b.id AS id_direccion,
+    b.nombre AS direccion,
+    b.numero,
+    d.id AS id_rol,
+    d.nombre AS rol,
+    e.id AS id_auto,
+    e.nombre AS auto,
+    e.url,
+    f.id AS id_proveedor,
+    f.nombre AS proveedor
 FROM usuarios a 
-    LEFT JOIN usuarios_roles b ON a.id = b.id_usuario
-    LEFT JOIN roles c ON c.id = b.id_rol
-    LEFT JOIN autos d ON d.id = a.id_auto
-    LEFT JOIN direcciones e ON e.id_usuario = a.id
+    LEFT JOIN direcciones b ON b.id_usuario = a.id
+    LEFT JOIN usuarios_roles c ON c.id_usuario = a.id
+    LEFT JOIN roles d ON d.id = c.id_rol
+    LEFT JOIN autos e ON e.id = a.id_auto
+    LEFT JOIN proveedores f ON f.id = e.id_proveedor
 WHERE
     correo = 'netero@hxh.cl' AND clave = '123456';
 
 SELECT 
-    id, 
-    nombre 
-FROM roles;
+    a.id,
+    a.correo,
+    a.clave,
+    a.nombre,
+    a.apodo,
+    a.peso,
+    a.fecha_creacion,
+    a.fecha_modificacion,
+    b.id AS id_direccion,
+    b.nombre AS direccion,
+    b.numero,
+    d.id AS id_rol,
+    d.nombre AS rol,
+    e.id AS id_auto,
+    e.nombre AS auto,
+    e.url,
+    f.id AS id_proveedor,
+    f.nombre AS proveedor
+FROM usuarios a 
+    LEFT JOIN direcciones b ON b.id_usuario = a.id
+    LEFT JOIN usuarios_roles c ON c.id_usuario = a.id
+    LEFT JOIN roles d ON d.id = c.id_rol
+    LEFT JOIN autos e ON e.id = a.id_auto
+    LEFT JOIN proveedores f ON f.id = e.id_proveedor;
 
-SELECT 
-    id, 
-    nombre, 
-    numero, 
-    id_usuario 
-FROM direcciones;
-
-SELECT 
-    id, 
-    nombre, 
-    url, 
-    id_proveedor 
-FROM autos;
+SELECT COUNT(id) FROM usuarios WHERE correo = 'netero@hxh.cl';
+SELECT COUNT(id) FROM usuarios WHERE correo = 'netero@hxh.cl' AND clave = '123456';
+SELECT id, nombre, url, id_proveedor FROM autos;
+SELECT id, nombre FROM roles;
+SELECT id, nombre, numero, id_usuario FROM direcciones;
+INSERT INTO usuarios_roles (id_usuario, id_rol) VALUES (0, 0);
+INSERT INTO usuarios (correo, clave, nombre, apodo, peso, id_auto) VALUES ('', '', '', '', 0,  0);
 
 DROP TABLE usuarios_roles;
 DROP TABLE roles;

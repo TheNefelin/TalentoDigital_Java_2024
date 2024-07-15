@@ -37,7 +37,8 @@ public class UserService implements IUserService {
     @Override
     public ServiceResponse<UserDTO> addUser(UserDTO userDTO) {
         ServiceResponse<UserDTO> serviceResponse = new ServiceResponse<>();
-        serviceResponse.setError(true); // indica que hay un error
+        // indica que hay un error
+        serviceResponse.setError(true);
 
         if (!userDTO.getPassword().equals(userDTO.getPassword2())) {
             serviceResponse.setMsg("Las Contraseñas no Coinciden!!!");
@@ -49,7 +50,8 @@ public class UserService implements IUserService {
             return serviceResponse;
         }
 
-        userDTO = userDAO.add(userDTO); // crea el usuario y obtengo el id
+        // crea el usuario y obtengo el id
+        userDTO = userDAO.add(userDTO);
 
         if (userDTO.getId() == 0) {
             serviceResponse.setMsg("Error al Crear el Usuario id = " + userDTO.getId());
@@ -59,8 +61,8 @@ public class UserService implements IUserService {
 
         // preparacion para agregar direccion
         AddressDTO addressDTO = new AddressDTO();
-        addressDTO.setAddressName(userDTO.getAddress());
-        addressDTO.setAddressNumber(userDTO.getAddressNumber());
+        addressDTO.setName(userDTO.getAddress().getName());
+        addressDTO.setNumber(userDTO.getAddress().getNumber());
         addressDTO.setIdUser(userDTO.getId());
 
         addressDTO = addressDAO.add(addressDTO); // se guarda la direccion
@@ -70,7 +72,7 @@ public class UserService implements IUserService {
         }
 
         // preparacion para vincular el rol con el usuario
-        UserRolDTO userRolDTO = new UserRolDTO(userDTO.getId(), userDTO.getIdRol());
+        UserRolDTO userRolDTO = new UserRolDTO(userDTO.getId(), userDTO.getRol().getId());
         boolean isUserRolOK = userRolDAO.add(userRolDTO);
 
         if (!isUserRolOK) {
@@ -91,7 +93,7 @@ public class UserService implements IUserService {
 
         if (serviceResponse.getObj() == null)
             serviceResponse.setMsg("Usuario o Contraseña Incorrecta!!!");
-        else if (!serviceResponse.getObj().getRol().equals("Admin"))
+        else if (!serviceResponse.getObj().getRol().getName().equals("Admin"))
             serviceResponse.setMsg("No Esta Autorizado para Ingresar!!!  (...trabajador)");
         else {
             serviceResponse.setError(false); // infico que NO hay un error

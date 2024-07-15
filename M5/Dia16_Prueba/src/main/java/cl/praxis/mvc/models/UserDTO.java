@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.management.relation.Role;
 import java.sql.Date;
 
 @AllArgsConstructor
@@ -21,13 +22,8 @@ public class UserDTO {
     private int weight;
     private Date date_create;
     private Date date_update;
-
-    private int idRol;
-    private String rol;
-    private int idCar;
-    private String car;
-    private String url;
-    private int idAddress;
-    private String address;
-    private int addressNumber;
+    private AddressDTO address;
+    private RolDTO rol;
+    private CarDTO car;
+    private SupplierDTO supplier;
 }
