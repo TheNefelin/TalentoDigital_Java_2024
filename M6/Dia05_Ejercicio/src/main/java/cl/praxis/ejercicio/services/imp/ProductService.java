@@ -1,48 +1,34 @@
 package cl.praxis.ejercicio.services.imp;
 
 import cl.praxis.ejercicio.entities.Product;
-import cl.praxis.ejercicio.repositories.IProductRepository;
-import cl.praxis.ejercicio.services.IBaseCRUD;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductService implements IBaseCRUD<Product> {
-    @Autowired
-    private IProductRepository repo;
+public class ProductService {
+    private final static Logger LOG = LoggerFactory.getLogger(ProductService.class);
+    List<Product> products;
 
-    @Override
+    public ProductService() {
+        products = List.of(
+                new Product(1, "Manzana", 100, 50),
+                new Product(2, "Leche", 150, 30),
+                new Product(3, "Pan", 50, 100),
+                new Product(4, "Arroz", 80, 60),
+                new Product(5, "Café", 200, 40),
+                new Product(6, "Azúcar", 70, 80),
+                new Product(7, "Jugo de Naranja", 120, 20)
+        );
+    }
+
     public List<Product> getAll() {
-        return repo.findAll();
+        return products;
     }
 
-    @Override
     public Product getById(int id) {
-        return repo.findById(id).orElse(null);
-    }
-
-    @Override
-    public Product add(Product entity) {
-        return repo.save(entity);
-    }
-
-    @Override
-    public Product update(int id, Product entity) {
-        if (repo.existsById(id)) {
-            entity.setId(id);
-            return repo.save(entity);
-        }
-        return null;
-    }
-
-    @Override
-    public boolean delete(int id) {
-        if (repo.existsById(id)) {
-            repo.deleteById(id);
-            return true;
-        }
-        return false;
+        return products.stream().filter(product -> product.getId() == id).findFirst().orElse(null);
     }
 }
