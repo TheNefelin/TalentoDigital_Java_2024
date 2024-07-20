@@ -1,7 +1,7 @@
 package cl.praxis.ejercicio.services.imp;
 
-import cl.praxis.ejercicio.entities.Product;
-import cl.praxis.ejercicio.repositories.IProductRepository;
+import cl.praxis.ejercicio.entities.Firefighter;
+import cl.praxis.ejercicio.repositories.IFirefighterRepository;
 import cl.praxis.ejercicio.services.IBaseCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,27 +9,27 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProductService implements IBaseCRUD<Product> {
+public class FirefighterService implements IBaseCRUD<Firefighter> {
     @Autowired
-    private IProductRepository repo;
+    private IFirefighterRepository repo;
 
     @Override
-    public List<Product> getAll() {
+    public List<Firefighter> getAll() {
         return repo.findAll();
     }
 
     @Override
-    public Product getById(int id) {
+    public Firefighter getById(int id) {
         return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Product add(Product entity) {
+    public Firefighter add(Firefighter entity) {
         return repo.save(entity);
     }
 
     @Override
-    public Product update(int id, Product entity) {
+    public Firefighter update(int id, Firefighter entity) {
         if (repo.existsById(id)) {
             entity.setId(id);
             return repo.save(entity);

@@ -2,39 +2,47 @@ package cl.praxis.ejercicio.services.imp;
 
 import cl.praxis.ejercicio.entities.Student;
 import cl.praxis.ejercicio.repositories.IStudentRepository;
-import cl.praxis.ejercicio.services.IStudentService;
+import cl.praxis.ejercicio.services.IBaseCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StudentService implements IStudentService {
+public class StudentService implements IBaseCRUD<Student> {
     @Autowired
-    private IStudentRepository studentRepository;
+    private IStudentRepository repo;
 
     @Override
-    public Student getStudentById(int id) {
-        return studentRepository.findById(id).orElse(null);
+    public List<Student> getAll() {
+        return repo.findAll();
     }
 
     @Override
-    public List<Student> getAllStudents() {
-        return studentRepository.findAll();
+    public Student getById(int id) {
+        return repo.findById(id).orElse(null);
     }
 
     @Override
-    public Student addStudent(Student student) {
-        return studentRepository.save(student);
+    public Student add(Student entity) {
+        return repo.save(entity);
     }
 
     @Override
-    public Student updateStudent(Student student) {
-        return studentRepository.save(student);
+    public Student update(int id, Student entity) {
+        if (repo.existsById(id)) {
+            entity.setId(id);
+            return repo.save(entity);
+        }
+        return null;
     }
 
     @Override
-    public void deleteStudent(int id) {
-        studentRepository.deleteById(id);
+    public boolean delete(int id) {
+        if (repo.existsById(id)) {
+            repo.deleteById(id);
+            return true;
+        }
+        return false;
     }
 }
