@@ -1,7 +1,6 @@
 package cl.praxis.ejercicio;
 
-import cl.praxis.ejercicio.entities.Product;
-import cl.praxis.ejercicio.services.imp.FirefighterService;
+import cl.praxis.ejercicio.entities.others.Product;
 import cl.praxis.ejercicio.services.imp.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

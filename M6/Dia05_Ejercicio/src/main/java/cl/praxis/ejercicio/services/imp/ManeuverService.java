@@ -1,7 +1,6 @@
 package cl.praxis.ejercicio.services.imp;
 
-import cl.praxis.ejercicio.entities.Maneuver;
-import cl.praxis.ejercicio.services.IBaseCRUD;
+import cl.praxis.ejercicio.entities.others.Maneuver;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package cl.praxis.ejercicio.services.imp;
 
-import cl.praxis.ejercicio.entities.Firefighter;
+import cl.praxis.ejercicio.entities.others.Firefighter;
 import cl.praxis.ejercicio.services.IBaseCRUD;
 import org.springframework.stereotype.Service;
 

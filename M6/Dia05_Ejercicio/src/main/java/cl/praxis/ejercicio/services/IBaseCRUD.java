@@ -1,7 +1,5 @@
 package cl.praxis.ejercicio.services;
 
-import cl.praxis.ejercicio.entities.Product;
-
 import java.util.List;
 
 public interface IBaseCRUD<T> {

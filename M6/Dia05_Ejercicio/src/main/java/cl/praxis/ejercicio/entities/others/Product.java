@@ -1,4 +1,4 @@
-package cl.praxis.ejercicio.entities;
+package cl.praxis.ejercicio.entities.others;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

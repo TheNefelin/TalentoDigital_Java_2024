@@ -1,6 +1,6 @@
 package cl.praxis.ejercicio.services.imp;
 
-import cl.praxis.ejercicio.entities.Product;
+import cl.praxis.ejercicio.entities.others.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
