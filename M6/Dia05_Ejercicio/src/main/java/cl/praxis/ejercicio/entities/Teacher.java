@@ -25,5 +25,5 @@ public class Teacher {
     private String email;
 
     @Column(name = "asignatura", nullable = false, length = 100)
-    public String subject;
+    private String subject;
 }

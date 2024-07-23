@@ -1,4 +1,4 @@
-package cl.praxis.ejercicio.services.imp;
+package cl.praxis.ejercicio.services.imp.others;
 
 import cl.praxis.ejercicio.entities.others.Firefighter;
 import cl.praxis.ejercicio.services.IBaseCRUD;

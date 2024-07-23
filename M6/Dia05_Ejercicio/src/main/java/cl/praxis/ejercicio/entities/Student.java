@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Entity
 @Table(name = "estudiantes")
-public class Student {
+public class Student extends APerson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,9 +23,9 @@ public class Student {
     @Column(name = "apellido", nullable = false, length = 50)
     private String surname;
 
-    @Column(name = "nacimiento", nullable = false)
-    private LocalDate birth;
-
     @Column(name = "correo", nullable = false, length = 50, unique = true)
     private String email;
+
+    @Column(name = "nacimiento", nullable = false)
+    private LocalDate birth;
 }

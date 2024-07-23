@@ -1,4 +1,4 @@
-package cl.praxis.ejercicio.services.imp;
+package cl.praxis.ejercicio.services.imp.others;
 
 import cl.praxis.ejercicio.entities.others.Product;
 import org.slf4j.Logger;

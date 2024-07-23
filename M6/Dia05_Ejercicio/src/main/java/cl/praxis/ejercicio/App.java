@@ -1,7 +1,7 @@
 package cl.praxis.ejercicio;
 
 import cl.praxis.ejercicio.entities.others.Product;
-import cl.praxis.ejercicio.services.imp.ProductService;
+import cl.praxis.ejercicio.services.imp.others.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
