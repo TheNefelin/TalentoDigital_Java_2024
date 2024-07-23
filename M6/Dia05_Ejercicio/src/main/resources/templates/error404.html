@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:insert="fragments/bootstrap_css :: link">
+
+    <title>Error 404</title>
+</head>
+<body>
+    <header th:insert="fragments/nav :: header"></header>
+
+    <section class="container">
+        <div class="m-4 alert alert-danger" role="alert">
+            <p class="text-center">ERROR 404!! Pagina No Encontrada</p>
+        </div>
+    </section>
+
+    <script th:insert="fragments/bootstrap_js :: script"></script>
+</body>
+</html>
