@@ -4,4 +4,4 @@
 - [Dia01 Mi Primer Spring](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia01_MiPrimerSpring) (Spring Boot)
 - [Dia03 Desafio Persona](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia03_Desafio_Persona) (Spring Boot)
 - [Dia05 Ejercicio](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia05_Ejercicio) (Spring Boot)
-- [Dia06 Desafio Biblioteca](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia06_Desafio_Biblioteca) (Spring Boot)
+- [Dia06 - Dia08 Desafio Biblioteca](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia06_Desafio_Biblioteca) (Spring Boot)
