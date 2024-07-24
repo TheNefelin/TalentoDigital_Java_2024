@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:replace="components/bootstrap_css :: link">
+    <link th:replace="components/bootstrap_icon :: link">
+
+    <title>Libro</title>
+</head>
+<body>
+    <header th:insert="components/nav :: header"></header>
+
+    <section class="container p-4">
+        <h2 th:text="${libro} != null ? 'Modificar Libro' : 'Nuevo Libro'"></h2>
+
+        <form th:method="post" th:action="@{/book}">
+            <input th:if="${libro != null}" th:value="${libro.id}" type="hidden" name="id">
+
+            <div class="mb-3">
+                <label for="title" class="form-label">Titulo</label>
+                <input th:value="${libro != null ? libro.title : ''}" type="text" id="title" name="title" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Autor</label>
+                <input th:value="${libro != null ? libro.author : ''}" type="text" id="author" name="author" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="publisher" class="form-label">Editorial</label>
+                <input th:value="${libro != null ? libro.publisher : ''}" type="text" id="publisher" name="publisher" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary" th:text="${libro != null ? 'Modificar' : 'Guardar'}"></button>
+        </form>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>

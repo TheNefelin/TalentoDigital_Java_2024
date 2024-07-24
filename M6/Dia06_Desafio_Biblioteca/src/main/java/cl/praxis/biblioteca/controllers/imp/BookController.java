@@ -1,79 +1,88 @@
 package cl.praxis.biblioteca.controllers.imp;
 
-import cl.praxis.biblioteca.controllers.IBaseControllerCRUD;
 import cl.praxis.biblioteca.entities.Book;
 import cl.praxis.biblioteca.services.IBaseServiceCRUD;
+import lombok.extern.java.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/")
-public class BookController implements IBaseControllerCRUD<Book> {
-    private final static Logger LOG = LoggerFactory.getLogger(BookController.class);
+@Controller
+@RequestMapping("/book")
+public class BookController {
+    private final static Logger LOG = LoggerFactory.getLogger(BookRestController.class);
 
     @Autowired
     private IBaseServiceCRUD<Book> service;
 
-    @GetMapping
-    @Override
-    public List<Book> findAll() {
+    // metodo CRUD
+    @GetMapping()
+    public String getAll(Model model) {
         LOG.info("--> Consultando Todos los Libros");
-        return service.findAll();
+
+        model.addAttribute("libros", service.findAll());
+        return "book_list";
     }
 
-    @GetMapping("/{id}")
-    @Override
-    public ResponseEntity<Book> findById(@PathVariable int id) {
-        LOG.warn("--> Consultando Libro con ID: " + id);
-        Book book = service.findById(id);
-
-        if (book != null) {
-            LOG.info("--> Consulta de Libro Exitosa");
-            return ResponseEntity.ok(book);
-        }
-
-        LOG.error("--> Consulta de Libro Fallida");
-        return ResponseEntity.notFound().build();
-    }
-
-    @PostMapping
-    @Override
-    public ResponseEntity<Book> create(@RequestBody Book book) {
+    // metodo CRUD
+    @PostMapping()
+    public String create(@ModelAttribute Book book) {
         LOG.warn("--> Creando Nuevo Libro");
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.create(book));
+
+        service.create(book);
+        return "redirect:/book";
     }
 
-    @PutMapping
-    @Override
-    public ResponseEntity<Book> update(Book book) {
+    // metodo CRUD
+    @PutMapping()
+    public String update(@ModelAttribute Book book) {
         LOG.warn("--> Modificando Libro");
+        service.update(book);
 
-        if (service.update(book)) {
-            LOG.info("--> Libro Modificado con Exito");
-            return ResponseEntity.ok(book);
-        }
-
-        LOG.error("--> Modificacion del Libro Fallida");
-        return ResponseEntity.notFound().build();
+        return "redirect:/book";
     }
 
-    @DeleteMapping("/{id}")
-    @Override
-    public ResponseEntity<Void> delete(@PathVariable int id) {
+    // metodo CRUD
+    @DeleteMapping()
+    public String delete(@RequestParam int id) {
         LOG.warn("--> Eliminando Libro");
 
         if (service.delete(id)) {
             LOG.info("--> Libro Eliminado con Exito");
-            return ResponseEntity.noContent().build();
+        } else {
+            LOG.error("--> Eliminacion del Libro Fallida");
         }
 
-        LOG.error("--> Eliminacion del Libro Fallida");
-        return ResponseEntity.notFound().build();
+        return "redirect:/book";
+    }
+
+    // metodo de enrutado para crear
+    @GetMapping("/create")
+    public String routeCreate(Model model) {
+        LOG.warn("--> Enrutado para Crear Nuevo Libro");
+
+        return "book_form";
+    }
+
+    // metodo de enrutado para modificar
+    @PutMapping("/update")
+    public String routeUpdate(@RequestParam int id, Model model) {
+        LOG.warn("--> Enrutado para Modificar Libro");
+
+        Book book = service.findById(id);
+        System.out.println(book);
+        if (book == null) {
+            LOG.error("--> Libro no encontrado");
+            return "redirect:/book";
+        } else {
+            model.addAttribute("libro", book);
+            return "book_form";
+        }
     }
 }

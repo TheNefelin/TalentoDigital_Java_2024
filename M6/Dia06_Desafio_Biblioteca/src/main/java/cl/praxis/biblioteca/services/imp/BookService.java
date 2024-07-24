@@ -13,7 +13,6 @@ public class BookService implements IBaseServiceCRUD<Book> {
     @Autowired
     private IBookRepository repo;
 
-
     @Override
     public List<Book> findAll() {
         return repo.findAll();

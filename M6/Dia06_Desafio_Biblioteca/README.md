@@ -39,8 +39,8 @@ Empaquetado WAR es para Web
 │   │      ├── App.java
 │   │      └── ServletInitializer.java
 │   └── resources/
-│          ├── controllers/
-│          └── entities/
+│          ├── static/
+│          └── templates/
 └── test/
 ```
 
@@ -60,6 +60,42 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.format_sql=true
+```
+
+### Config MVC
+* resource => application.properties
+```
+# Enable PUT and DELETE in MVC
+spring.mvc.hiddenmethod.filter.enabled=true
+```
+
+### Config Error Template
+* resource => application.properties
+```
+# Custom Error Controller
+server.error.whitelabel.enabled=false
+server.error.path=/error
+```
+* Create error404.html
+* Create Custom Error Controller
+```
+@Controller
+public class CustomErrorController implements ErrorController {
+    @GetMapping("/error")
+    public String handleError(HttpServletRequest request) {
+        Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
+
+        if (status != null) {
+            Integer statusCode = Integer.valueOf(status.toString());
+
+            if (statusCode == 404) {
+                return "error404";
+            }
+        }
+
+        return "error404";
+    }
+}
 ```
 
 ### Loggers
@@ -104,10 +140,10 @@ public void run(String... args) throws Exception {
     "publisher": "Tor Books"
   },
   {
-	"id": 4,
-	"title": "Canción de Hielo y Fuego: Juego de Tronos",
-	"author": "George R. R. Martin",
-	"publisher": "Bantam Books"
+    "id": 4,
+    "title": "Canción de Hielo y Fuego: Juego de Tronos",
+    "author": "George R. R. Martin",
+    "publisher": "Bantam Books"
   }
 ]
 ```
