@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:insert="components/bootstrap_css :: link">
+
+    <title>Lista Paciente</title>
+</head>
+<body>
+    <header th:insert="components/nav :: header"></header>
+
+    <section class="container p-4">
+        <h2>Lista de Pacientes</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Admisión</th>
+                    <th scope="col">Habitacion</th>
+                    <th scope="col">Cama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="paciente : ${pacientes}">
+                    <th th:text="${paciente.id}"></th>
+                    <th th:text="${paciente.name}"></th>
+                    <th th:text="${paciente.surname}"></th>
+                    <th th:text="${paciente.admissionDate}"></th>
+                    <th th:text="${paciente.room}"></th>
+                    <th th:text="${paciente.bed}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>
