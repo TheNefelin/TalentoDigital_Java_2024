@@ -7,15 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/student")
 public class StudentController {
     @Autowired
     private IBaseCRUD<Student> service;
 
-    @GetMapping("/getAll")
+    @GetMapping()
     public String getAll(Model model) {
         model.addAttribute("estudiantes", service.getAll());
         return "students";
