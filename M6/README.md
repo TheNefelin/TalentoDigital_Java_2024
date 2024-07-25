@@ -6,3 +6,4 @@
 - [Dia05 Ejercicio](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia05_Ejercicio) (Spring Boot)
 - [Dia06 - Dia08 Desafio Biblioteca](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia06_Desafio_Biblioteca) (Spring Boot)
 - [Dia09 Desafio Hospital](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia09_Desafio_Hospital) (Spring Boot)
+- [Dia10 Ejercicio](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia10_Ejercicio) (Spring Boot)
