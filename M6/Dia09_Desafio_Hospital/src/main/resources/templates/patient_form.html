@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:insert="components/bootstrap_css :: link">
+
+    <title>Paciente</title>
+</head>
+<body>
+    <header th:insert="components/nav :: header"></header>
+
+    <section class="container p-4">
+        <h2 th:text="${paciente} != null ? 'Modificar Paciente' : 'Nuevo Paciente'"></h2>
+
+        <form th:method="${paciente != null} ? 'put' : 'post'" th:action="@{/patient}">
+            <input th:if="${paciente != null}" th:value="${paciente.id}" type="hidden" name="id">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input required th:value="${paciente != null ? paciente.name : ''}" type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="surname" class="form-label">Apellido</label>
+                <input required th:value="${paciente != null ? paciente.surname : ''}" type="text" id="surname" name="surname" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="admission" class="form-label">Admisión</label>
+                <input required th:value="${paciente != null ? paciente.admission : ''}" type="date" id="admission" name="admission" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="diagnosis" class="form-label">Diagnóstico</label>
+                <input required th:value="${paciente != null ? paciente.diagnosis : ''}" type="text" id="diagnosis" name="diagnosis" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="room" class="form-label">Habitación</label>
+                <input required th:value="${paciente != null ? paciente.room : ''}" type="text" id="room" name="room" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="bed" class="form-label">Cama</label>
+                <input required th:value="${paciente != null ? paciente.bed : ''}" type="number" id="bed" name="bed" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary" th:text="${paciente != null ? 'Modificar' : 'Guardar'}"></button>
+        </form>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>

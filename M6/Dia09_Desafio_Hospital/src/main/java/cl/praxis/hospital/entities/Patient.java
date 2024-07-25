@@ -24,7 +24,10 @@ public class Patient {
     private String surname;
 
     @Column(name = "admision", nullable = false)
-    private LocalDate admissionDate;
+    private LocalDate admission;
+
+    @Column(name = "diagnostico", nullable = false, length = 100)
+    private String diagnosis;
 
     @Column(name = "habitacion", nullable = false, length = 50)
     private String room;

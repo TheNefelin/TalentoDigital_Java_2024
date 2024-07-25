@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link th:insert="components/bootstrap_css :: link">
+    <link th:replace="components/bootstrap_icon :: link">
 
     <title>Lista Paciente</title>
 </head>
@@ -13,6 +14,11 @@
     <section class="container p-4">
         <h2>Lista de Pacientes</h2>
 
+        <a th:href="@{patient/create}" class="btn btn-primary my-4">
+            <i class="bi bi-plus-square"></i>
+            Ingresar Paciente
+        </a>
+
         <table class="table">
             <thead>
                 <tr>
@@ -20,18 +26,31 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Admisión</th>
+                    <th scope="col">Diagnóstico</th>
                     <th scope="col">Habitacion</th>
                     <th scope="col">Cama</th>
+                    <th scope="col">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="paciente : ${pacientes}">
                     <th th:text="${paciente.id}"></th>
-                    <th th:text="${paciente.name}"></th>
-                    <th th:text="${paciente.surname}"></th>
-                    <th th:text="${paciente.admissionDate}"></th>
-                    <th th:text="${paciente.room}"></th>
-                    <th th:text="${paciente.bed}"></th>
+                    <td th:text="${paciente.name}"></td>
+                    <td th:text="${paciente.surname}"></td>
+                    <td th:text="${paciente.admission}"></td>
+                    <td th:text="${paciente.diagnosis}"></td>
+                    <td th:text="${paciente.room}"></td>
+                    <td th:text="${paciente.bed}"></td>
+                    <td class="d-flex gap-2">
+                        <form th:method="put" th:action="@{/patient/update}">
+                            <input type="hidden" name="id" th:value="${paciente.id}">
+                            <button class="btn btn-warning btn-sm"><i class="bi bi-pencil-fill"></i></button>
+                        </form>
+                        <form th:method="delete" th:action="@{/patient}">
+                            <input type="hidden" name="id" th:value="${paciente.id}">
+                            <button class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                        </form>
+                    </td>
                 </tr>
             </tbody>
         </table>
