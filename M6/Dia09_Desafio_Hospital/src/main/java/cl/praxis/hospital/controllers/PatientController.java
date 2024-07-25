@@ -20,7 +20,7 @@ public class PatientController {
     // CRUD
     @GetMapping
     public String findAll(Model model) {
-        LOG.info("Find all patients");
+        LOG.info("--> Find all patients");
 
         model.addAttribute("pacientes", service.findAll());
         return "patient_list";
@@ -29,7 +29,7 @@ public class PatientController {
     // CRUD
     @PostMapping()
     public String create(@ModelAttribute Patient patient) {
-        LOG.info("Create patient");
+        LOG.info("--> Create patient");
 
         service.save(patient);
         return "redirect:/patient";
@@ -38,7 +38,7 @@ public class PatientController {
     // CRUD
     @PutMapping()
     public String update(@ModelAttribute Patient patient) {
-        LOG.info("Update patient");
+        LOG.info("--> Update patient");
 
         service.update(patient);
         return "redirect:/patient";
@@ -47,7 +47,7 @@ public class PatientController {
     // CRUD
     @DeleteMapping
     public String delete(@RequestParam int id) {
-        LOG.info("Delete patient");
+        LOG.info("--> Delete patient");
 
         service.delete(id);
         return "redirect:/patient";

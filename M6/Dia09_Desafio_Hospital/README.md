@@ -44,6 +44,36 @@ Empaquetado WAR es para Web
 └── test/
 ```
 
+### Annotations
+* Clases
+  * @Service
+  * @Repository
+  * @Controller (WebApp)
+  * @RestController (RestAPI)
+* Entities
+  * @Entity
+  * @Table
+  * @Id
+  * @GeneratedValue
+  * @Column
+  * @ManyToMany
+    * @JoinTable
+      * name = "t1_t2",
+      * joinColumns = @JoinColumn(name = "id_t1"),
+      * inverseJoinColumns = @JoinColumn(name = "id_t2")
+  * @ManyToOne
+    * @JoinColumn(name = "id_t", ...
+* Metods
+  * @Autowired
+  * @GetMapping
+  * @PostMapping
+  * @PutMapping
+  * @DeleteMapping
+* Metods Param
+  * @RequestAttribute
+  * @ModelAttribute
+  * @RequestParam
+
 ### Config DB
 * resource => application.properties
 ```
@@ -61,7 +91,6 @@ spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.properties.hibernate.format_sql=true
 ```
-
 
 ### Config MVC
 * resource => application.properties
@@ -123,5 +152,6 @@ public void run(String... args) throws Exception {
 ```
 cmd
 netstat -ano
-taskkill /pid <pid-number> /f
+netstat -ano | findstr :8080
+taskkill /f /pid <pid-number>
 ```
