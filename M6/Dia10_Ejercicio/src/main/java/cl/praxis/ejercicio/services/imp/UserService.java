@@ -35,12 +35,11 @@ public class UserService implements IBaseServiceCRUD<User> {
     }
 
     @Override
-    public boolean update(User user) {
+    public User update(User user) {
         if (repo.existsById(user.getId())) {
-            repo.save(user);
-            return true;
+            return repo.save(user);
         }
-        return false;
+        return null;
     }
 
     @Override

@@ -29,12 +29,11 @@ public class ClientService implements IBaseServiceCRUD<Client> {
     }
 
     @Override
-    public boolean update(Client client) {
+    public Client update(Client client) {
         if (repo.existsById(client.getId())) {
-            repo.save(client);
-            return true;
+            return repo.save(client);
         }
-        return false;
+        return null;
     }
 
     @Override
