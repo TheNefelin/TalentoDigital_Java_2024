@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+    <title>Lista de Autos</title>
+</head>
+<body class="bg-dark text-light">
+<header>
+    <th:block th:insert="components/nav :: nav"></th:block>
+</header>
+
+<section class="container mt-4">
+    <h3>Lista de Autos</h3>
+
+    <a th:href="@{/crear}" class="btn btn-primary my-4">
+        <i class="bi bi-plus-square"></i>
+        Crear Nuevo Auto
+    </a>
+
+</section>
+
+<script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>

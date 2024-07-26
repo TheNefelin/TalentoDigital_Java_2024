@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+
+    <title>Autos</title>
+</head>
+<body class="bg-dark text-light">
+    <header>
+        <th:block th:insert="components/nav :: nav"></th:block>
+    </header>
+
+    <h1 class="text-center mt-4">Bienvenidos a Autos!!!</h1>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>
