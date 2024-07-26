@@ -6,7 +6,6 @@ import cl.praxis.ejercicio.services.IBaseServiceCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -15,17 +14,12 @@ public class UserService implements IBaseServiceCRUD<User> {
     private IUserRepository repo;
 
     @Override
-    public List<User> findAll() {
-        List<User> users = new ArrayList<>();
-        users.add(new User(1, "BestoFrendo", "bestofrendo@gmail.com", 35));
-        users.add(new User(2, "Tatana", "tatana@gmail.com", 31));
-        return users;
-
-        //return repo.findAll();
+    public List<User> getAll() {
+        return repo.findAll();
     }
 
     @Override
-    public User findById(int id) {
+    public User getById(int id) {
         return repo.findById(id).orElse(null);
     }
 

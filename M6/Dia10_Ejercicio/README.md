@@ -137,6 +137,29 @@ public class CustomErrorController implements ErrorController {
 ```
 ### Tests
 ```
+//Integra Mockito con JUnit 5.
+@ExtendWith(MockitoExtension.class)
+
+//Crea un mock del repositorio.
+@Mock
+IRepository repository;
+
+//Inyecta los mocks en el servicio.
+@InjectMocks
+Servicio servicio;
+
+//Configura el Mock (repo) para que devuelva algo (thenReturn)
+Algo algo = new Algo(....
+when(repository.metodo()).thenReturn(algo);
+
+// Llama al método del servicio para obtener algo
+Algo result = service.metodo();
+
+// Verifica que el resultado del método sea igual a algo
+assertThat(result).isEqualTo(algo);
+
+// Verifica que el método del repositorio se haya llamado una vez
+verify(repository, times(1)).metodo();
 ```
 
 ### Loggers

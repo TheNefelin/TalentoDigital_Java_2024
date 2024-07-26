@@ -19,6 +19,7 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.*;
 
+// permitiendo la creación automática de mocks
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
 public class ClientServiceTest {
@@ -26,9 +27,11 @@ public class ClientServiceTest {
     private Client client1;
     private Client client2;
 
+    //crea un mock (objeto simulado) simular el comportamiento del repositorio
     @Mock
     private IClientRepository repository;
 
+    //inyecte los mocks creados (como repository)
     @InjectMocks
     private ClientService service;
 
@@ -63,7 +66,7 @@ public class ClientServiceTest {
         List<Client> clients = Arrays.asList(client1, client2);
         when(repository.findAll()).thenReturn(clients);
 
-        List<Client> clientsResult = service.findAll();
+        List<Client> clientsResult = service.getAll();
         assertThat(clientsResult).isNotNull();
         assertThat(clientsResult.size()).isEqualTo(2);
         assertThat(clientsResult.get(0)).isEqualTo(client1);
@@ -75,14 +78,16 @@ public class ClientServiceTest {
     @Test
     void updateClientTest() {
         client1.setPhone(666);
+        client1.setAddress("Jamaica");
         when(repository.existsById(client1.getId())).thenReturn(true);
         when(repository.save(client1)).thenReturn(client1);
 
         Client clientResult = service.update(client1);
         assertThat(clientResult).isNotNull();
         assertThat(clientResult.getPhone()).isEqualTo(666);
+        assertThat(clientResult.getAddress()).isEqualTo("Jamaica");
 
-        verify(repository, times(1)).save(client1);
+        verify(repository, times(1)).save(clientResult);
     }
 
     @Test

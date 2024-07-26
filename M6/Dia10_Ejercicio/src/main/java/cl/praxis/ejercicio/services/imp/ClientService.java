@@ -14,12 +14,12 @@ public class ClientService implements IBaseServiceCRUD<Client> {
     private IClientRepository repo;
 
     @Override
-    public List<Client> findAll() {
+    public List<Client> getAll() {
         return repo.findAll();
     }
 
     @Override
-    public Client findById(int id) {
+    public Client getById(int id) {
         return repo.findById(id).orElse(null);
     }
 
