@@ -17,6 +17,24 @@ public class PatientController {
     @Autowired
     private IBaseServiceCRUD<Patient> service;
 
+    // ROUTE
+    @GetMapping("/create")
+    public String routeCreate() {
+        return "patient_form";
+    }
+
+    // ROUTE
+    @PutMapping("/update")
+    public String routeUpdate(@RequestParam int id, Model model) {
+        Patient patient = service.findById(id);
+
+        if (patient != null) {
+            model.addAttribute("paciente", patient);
+            return "patient_form";
+        } else
+            return "redirect:/patient";
+    }
+
     // CRUD
     @GetMapping
     public String findAll(Model model) {
@@ -51,23 +69,5 @@ public class PatientController {
 
         service.delete(id);
         return "redirect:/patient";
-    }
-
-    // ROUTE
-    @GetMapping("/create")
-    public String routeCreate() {
-        return "patient_form";
-    }
-
-    // ROUTE
-    @PutMapping("/update")
-    public String routeUpdate(@RequestParam int id, Model model) {
-        Patient patient = service.findById(id);
-
-        if (patient != null) {
-            model.addAttribute("paciente", patient);
-            return "patient_form";
-        } else
-            return "redirect:/patient";
     }
 }
