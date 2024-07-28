@@ -10,7 +10,34 @@
 </header>
 
 <section class="container mt-4">
-    <h3>Formulario de Autos</h3>
+    <h3 class="m-4">Formulario de Autos</h3>
+
+    <form class="m-4" th:method="${car != null ? 'put' : 'post'}" th:action="@{/car}">
+        <input th:if="${car != null}" th:value="${car.id}" type="hidden" name="id">
+
+        <div class="mb-3">
+            <label for="brand" class="form-label">Marca</label>
+            <input th:value="${car != null ? car.brand : ''}" required id="brand" name="brand" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="model" class="form-label">Modelo</label>
+            <input th:value="${car != null ? car.model : ''}" required id="model" name="model" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="speed" class="form-label">Velocidad</label>
+            <input th:value="${car != null ? car.speed : ''}" required id="speed" name="speed" type="number" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="color" class="form-label">Color</label>
+            <input th:value="${car != null ? car.color : ''}" required id="color" name="color" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="worth" class="form-label">Valor</label>
+            <input th:value="${car != null ? car.worth : ''}" id="worth" name="worth" type="number" class="form-control">
+        </div>
+
+        <button th:text="${car != null ? 'Modificar' : 'Crear'}" type="submit" class="btn btn-primary" ></button>
+    </form>
 </section>
 
 <script th:replace="components/bootstrap_js :: script"></script>

@@ -71,8 +71,9 @@ dependency
             * name = "t1_t2",
             * joinColumns = @JoinColumn(name = "id_t1"),
             * inverseJoinColumns = @JoinColumn(name = "id_t2")
+    * @ManyToMany(mappedBy = "t_ant")  
     * @ManyToOne
-        * @JoinColumn(name = "id_t", ...
+      * @JoinColumn(name = "id_t", ...
 * Metods
     * @Autowired
     * @GetMapping

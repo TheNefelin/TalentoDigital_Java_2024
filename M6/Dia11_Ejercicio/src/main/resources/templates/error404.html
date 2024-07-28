@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+    <title>Error</title>
+</head>
+<body class="bg-dark text-light">
+<header>
+    <th:block th:insert="components/nav :: nav"></th:block>
+</header>
+
+<section class="container">
+    <div class="m-4 alert alert-danger" role="alert">
+        <p class="text-center">ERROR 404!! Pagina No Encontrada</p>
+    </div>
+</section>
+
+<script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>
