@@ -73,14 +73,14 @@ public class BookController {
     // metodo de enrutado para modificar
     @PutMapping("/update")
     public String routeUpdate(@RequestParam int id, Model model) {
-        LOG.warn("--> Enrutado para Modificar Libro");
-
+        LOG.warn("--> Buscar libro para modificar");
         Book book = service.findById(id);
-        System.out.println(book);
+
         if (book == null) {
             LOG.error("--> Libro no encontrado");
             return "redirect:/book";
         } else {
+            LOG.info("--> Libro encontrado");
             model.addAttribute("libro", book);
             return "book_form";
         }
