@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+
+    <title>Cursos</title>
+</head>
+<body>
+    <header class="bg-body-tertiary shadow-lg">
+        <th:block th:insert="components/nav :: nav"></th:block>
+    </header>
+
+    <section class="container my-4">
+        <h3 th:text="${course != null ? 'Modificar Cursos' : 'Nuevo Cursos'}" ></h3>
+
+        <form th:action="@{/courses}" th:method="${course != null ? 'PUT' : 'POST'}" class="my-4 p-4 rounded border">
+            <input th:if="${course != null}" th:value="${course.id}" type="hidden" name="id">
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre Curso</label>
+                <input th:value="${course != null ? course.name : ''}" required type="text" class="form-control" id="name" name="name">
+            </div>
+
+            <button th:text="${course != null ? 'Modificar' : 'Crear Nuevo'}" type="submit" class="btn btn-primary"></button>
+        </form>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>

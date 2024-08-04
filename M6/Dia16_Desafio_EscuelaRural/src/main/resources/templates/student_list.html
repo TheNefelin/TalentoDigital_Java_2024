@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+
+    <title>Estudiantes</title>
+</head>
+<body>
+    <header class="bg-body-tertiary shadow-lg">
+        <th:block th:insert="components/nav :: nav"></th:block>
+    </header>
+
+    <section class="container my-4">
+        <h3>Lista de Estudiantes</h3>
+
+        <a th:href="@{/students/create}" type="button" class="btn btn-primary my-4">
+            <i class="bi bi-plus-circle"></i>
+            Nuevo Estudiante
+        </a>
+
+        <table class="table table-striped rounded border">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <th th:text="${student.id}" scope="row"></th>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.surname}"></td>
+                <td th:text="${student.course.name}"></td>
+                <td class="d-flex gap-2">
+                    <form th:method="put" th:action="@{/students/update}">
+                        <input th:value="${student.id}" name="id" type="hidden">
+                        <button type="submit" class="btn btn-warning btn-sm"><i class="bi bi-pencil-fill"></i></button>
+                    </form>
+                    <form th:method="delete" th:action="@{/students}">
+                        <input th:value="${student.id}" name="id" type="hidden">
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash3-fill"></i></button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>
