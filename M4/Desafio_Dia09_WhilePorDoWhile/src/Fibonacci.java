@@ -17,11 +17,11 @@ public class Fibonacci {
                 System.out.println("Numero invalido");
                 sc.next();
             }
-        } while (cant <= 0);
+        } while (cant < 0);
 
         System.out.println("-------------------------------");
 
-        for(int i = 0; i < cant; i++){
+        for(int i = 0; i <= cant; i++){
             System.out.println(n0);
             suma = n0 + n1;
             n0 = n1;
