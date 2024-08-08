@@ -1,0 +1,32 @@
+<header>
+    <nav class="container navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a th:href="@{/}" class="navbar-brand">Control Reclamos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a th:href="@{/rest_user}" class="nav-link">Rest</a>
+                    </li>
+                    <li th:if="${#authentication.principal == 'anonymousUser'}" class="nav-item">
+                        <a th:href="@{/login}" class="nav-link">Iniciar Sesión</a>
+                    </li>
+                    <li th:if="${#authentication.principal == 'anonymousUser'}" class="nav-item">
+                        <a th:href="@{/register}" class="nav-link">Registrarse</a>
+                    </li>
+                    <li th:if="${#authentication.principal != 'anonymousUser'}" class="nav-item">
+                        <a th:href="@{/logout}" class="nav-link">Cerrar Sesión</a>
+                    </li>
+                    <li th:if="${#authentication.principal != 'anonymousUser'}" class="nav-item">
+                        <a th:href="@{/private}" class="nav-link">Privado</a>
+                    </li>
+                    <li th:if="${#authentication.principal != 'anonymousUser'}" class="nav-item">
+                        <p th:text="${#authentication.principal.username}" class="nav-link"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
