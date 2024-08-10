@@ -193,6 +193,7 @@ public void run(String... args) throws Exception {
 ```
 ### Spring Security
 * SecurityConfig Class in /configure folder
+1. For Controller
 ```
 @Configuration
 @EnableWebSecurity
@@ -212,6 +213,9 @@ public class SecurityConfig {
         return http.build();
     }
 }
+```
+2. For RestController
+```
 ```
 
 ### Bootstrap
@@ -281,10 +285,10 @@ graph TD;
 * Create data.sql in Resources folder
 * Change config in application.properties config
 ```
-// replace this 
-spring.jpa.hibernate.ddl-auto=update
+# replace this 
+# spring.jpa.hibernate.ddl-auto=update
 
-// with this
+# with this
 # Seed
 spring.jpa.hibernate.ddl-auto=create-drop
 spring.jpa.defer-datasource-initialization=true

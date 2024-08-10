@@ -1,16 +1,16 @@
 package cl.praxis.inmobiliaria.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Builder
 @Entity
 @Table(name = "usuarios")
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,14 +24,13 @@ public class User {
     @Column(name = "correo", nullable = false, length = 100, unique = true)
     private String email;
 
-    @Column(name = "clave", nullable = false, length = 256)
+    @Column(name = "clave", nullable = false)
     private String password;
 
     @Transient
-    @Column(length = 256)
     private String passwordConfirmation;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_rol")
-    private Role role;
+    private RoleEntity role;
 }

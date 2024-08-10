@@ -1,25 +1,26 @@
 package cl.praxis.inmobiliaria.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
+@Builder
 @Entity
 @Table(name = "roles")
-public class Role {
+public class RoleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre", nullable = false, length = 50, unique = true)
-    private String name;
+    @Column(name = "rol", nullable = false, length = 50, unique = true, updatable = false)
+    @Enumerated(EnumType.STRING)
+    private RoleEnum roleEnum;
 
     @OneToMany(mappedBy = "role", fetch = FetchType.EAGER)
-    private List<User> users;
+    private List<UserEntity> users;
 }
