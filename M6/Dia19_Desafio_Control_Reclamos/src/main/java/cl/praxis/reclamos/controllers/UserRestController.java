@@ -1,7 +1,7 @@
 package cl.praxis.reclamos.controllers;
 
 import cl.praxis.reclamos.entities.IdDTO;
-import cl.praxis.reclamos.entities.User;
+import cl.praxis.reclamos.entities.UserEntitiy;
 import cl.praxis.reclamos.services.IServiceCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,28 +9,28 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rest_user")
+@RequestMapping("/api/user")
 public class UserRestController {
     @Autowired
-    IServiceCRUD<User> userService;
+    IServiceCRUD<UserEntitiy> userService;
 
     @GetMapping
-    public List<User> getAllUsers() {
+    public List<UserEntitiy> getAllUsers() {
         return userService.getAll();
     }
 
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public UserEntitiy getUserById(@PathVariable Long id) {
         return userService.getById(id);
     }
 
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public UserEntitiy createUser(@RequestBody UserEntitiy user) {
         return userService.create(user);
     }
 
     @PutMapping
-    public User updateUser(@RequestBody User user) {
+    public UserEntitiy updateUser(@RequestBody UserEntitiy user) {
         return userService.update(user);
     }
 

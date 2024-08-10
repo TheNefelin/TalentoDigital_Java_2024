@@ -8,7 +8,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a th:href="@{/rest_user}" class="nav-link">Rest</a>
+                        <a th:href="@{/api/user}" class="nav-link">Rest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/private}" class="nav-link">Privado</a>
                     </li>
                     <li th:if="${#authentication.principal == 'anonymousUser'}" class="nav-item">
                         <a th:href="@{/login}" class="nav-link">Iniciar Sesión</a>
@@ -17,13 +20,10 @@
                         <a th:href="@{/register}" class="nav-link">Registrarse</a>
                     </li>
                     <li th:if="${#authentication.principal != 'anonymousUser'}" class="nav-item">
-                        <a th:href="@{/logout}" class="nav-link">Cerrar Sesión</a>
-                    </li>
-                    <li class="nav-item">
-                        <a th:href="@{/private}" class="nav-link">Privado</a>
+                        <span th:text="${#authentication.principal.username}" class="nav-link"></span>
                     </li>
                     <li th:if="${#authentication.principal != 'anonymousUser'}" class="nav-item">
-                        <p th:text="${#authentication.principal.username}" class="nav-link"></p>
+                        <a th:href="@{/logout}" class="nav-link">Cerrar Sesión</a>
                     </li>
                 </ul>
             </div>

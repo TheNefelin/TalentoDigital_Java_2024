@@ -1,7 +1,7 @@
 package cl.praxis.reclamos.services.imp;
 
-import cl.praxis.reclamos.entities.Role;
-import cl.praxis.reclamos.entities.User;
+import cl.praxis.reclamos.entities.RoleEntity;
+import cl.praxis.reclamos.entities.UserEntitiy;
 import cl.praxis.reclamos.repositories.IUserRepository;
 import cl.praxis.reclamos.services.IServiceCRUD;
 import cl.praxis.reclamos.services.IUserService;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService implements IUserService, IServiceCRUD<User> {
+public class UserService implements IUserService, IServiceCRUD<UserEntitiy> {
     @Autowired
     private IUserRepository userRepository;
 
@@ -20,8 +20,8 @@ public class UserService implements IUserService, IServiceCRUD<User> {
     private BCryptPasswordEncoder passwordEncoder;  // Esto debería funcionar si BCryptPasswordEncoder es un bean
 
     @Override
-    public User register(User user) {
-        Role role = new Role();
+    public UserEntitiy register(UserEntitiy user) {
+        RoleEntity role = new RoleEntity();
         role.setId(2);
 
         user.setRole(role);
@@ -31,22 +31,22 @@ public class UserService implements IUserService, IServiceCRUD<User> {
     }
 
     @Override
-    public List<User> getAll() {
+    public List<UserEntitiy> getAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User getById(Long id) {
+    public UserEntitiy getById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
     @Override
-    public User create(User user) {
+    public UserEntitiy create(UserEntitiy user) {
         return userRepository.save(user);
     }
 
     @Override
-    public User update(User user) {
+    public UserEntitiy update(UserEntitiy user) {
         return userRepository.save(user);
     }
 

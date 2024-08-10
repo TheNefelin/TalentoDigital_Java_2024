@@ -1,6 +1,6 @@
 package cl.praxis.reclamos.controllers;
 
-import cl.praxis.reclamos.entities.User;
+import cl.praxis.reclamos.entities.UserEntitiy;
 import cl.praxis.reclamos.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,8 +42,8 @@ public class IndexController {
 
     // CRUD
     @PostMapping("/register")
-    public String registerRequest(@ModelAttribute User user, Model model) {
-        User newUser = userService.register(user);
+    public String registerRequest(@ModelAttribute UserEntitiy user, Model model) {
+        UserEntitiy newUser = userService.register(user);
 
         if (newUser != null && user.getId() != 0) {
             model.addAttribute("msge", "Usuario Registrado Correctamente");

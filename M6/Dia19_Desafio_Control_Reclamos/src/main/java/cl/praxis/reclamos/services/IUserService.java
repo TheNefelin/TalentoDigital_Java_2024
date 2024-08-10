@@ -1,8 +1,7 @@
 package cl.praxis.reclamos.services;
 
-import cl.praxis.reclamos.entities.User;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import cl.praxis.reclamos.entities.UserEntitiy;
 
 public interface IUserService {
-    User register(User user);
+    UserEntitiy register(UserEntitiy user);
 }
