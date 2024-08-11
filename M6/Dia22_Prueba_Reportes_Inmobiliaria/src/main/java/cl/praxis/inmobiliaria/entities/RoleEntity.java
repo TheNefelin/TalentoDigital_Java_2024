@@ -1,9 +1,11 @@
 package cl.praxis.inmobiliaria.entities;
 
+import cl.praxis.inmobiliaria.entities.models.RoleEnum;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,10 +19,15 @@ public class RoleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "rol", nullable = false, length = 50, unique = true, updatable = false)
+    @Column(name = "nombre", nullable = false, length = 50, unique = true, updatable = false)
     @Enumerated(EnumType.STRING)
     private RoleEnum roleEnum;
 
-    @OneToMany(mappedBy = "role", fetch = FetchType.EAGER)
-    private List<UserEntity> users;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "rol_permiso",
+            joinColumns = @JoinColumn(name = "id_rol"),
+            inverseJoinColumns = @JoinColumn(name = "id_permiso")
+    )
+    private Set<PermissionEntity> permissions = new HashSet<>();
 }

@@ -1,7 +1,9 @@
 package cl.praxis.inmobiliaria;
 
+import cl.praxis.inmobiliaria.entities.PermissionEntity;
 import cl.praxis.inmobiliaria.entities.RoleEntity;
-import cl.praxis.inmobiliaria.entities.RoleEnum;
+import cl.praxis.inmobiliaria.entities.models.PermissionEnum;
+import cl.praxis.inmobiliaria.entities.models.RoleEnum;
 import cl.praxis.inmobiliaria.entities.UserEntity;
 import cl.praxis.inmobiliaria.repositories.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +11,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.userdetails.User;
 
-import java.util.List;
+import java.util.Set;
 
 @SpringBootApplication
 public class App {
@@ -25,35 +26,53 @@ public class App {
     @Bean
     CommandLineRunner init() {
         return args -> {
-            RoleEntity roleAdmin = RoleEntity
-                    .builder()
-                    .roleEnum(RoleEnum.ROLE_ADMIN)
+            PermissionEntity permissionRead = PermissionEntity.builder()
+                    .permissionEnum(PermissionEnum.READ)
                     .build();
 
-            RoleEntity roleUser = RoleEntity
-                    .builder()
-                    .roleEnum(RoleEnum.ROLE_USER)
+            PermissionEntity permissionCreate = PermissionEntity.builder()
+                    .permissionEnum(PermissionEnum.CREATE)
                     .build();
 
-            UserEntity adminUser = UserEntity
-                    .builder()
-                    .name("El")
-                    .surname("Administrador")
-                    .email("admin@admin.cl")
-                    .password("123")
-                    .role(roleAdmin)
+            PermissionEntity permissionUpdate = PermissionEntity.builder()
+                    .permissionEnum(PermissionEnum.UPDATE)
                     .build();
 
-            UserEntity userUser = UserEntity
-                    .builder()
-                    .name("El")
-                    .surname("Usuario")
-                    .email("usuario@usuario.cl")
-                    .password("123")
-                    .role(roleUser)
+            PermissionEntity permissionDelete = PermissionEntity.builder()
+                    .permissionEnum(PermissionEnum.DELETE)
                     .build();
 
-            userRepository.saveAll(List.of(adminUser, userUser));
+            RoleEntity roleAdmin = RoleEntity.builder()
+                    .roleEnum(RoleEnum.ADMIN)
+                    .permissions(Set.of(permissionRead, permissionCreate, permissionUpdate, permissionDelete))
+                    .build();
+
+            RoleEntity roleUser = RoleEntity.builder()
+                    .roleEnum(RoleEnum.USER)
+                    .permissions(Set.of(permissionRead))
+                    .build();
+
+            UserEntity adminUser = UserEntity.builder()
+                    .username("admin")
+                    .password("admin")
+                    .isEnabled(true)
+                    .isAccountNonExpired(true)
+                    .isAccountNonLocked(true)
+                    .isCredentialsNonExpired(true)
+                    .roles(Set.of(roleAdmin, roleUser))
+                    .build();
+
+            UserEntity userUser = UserEntity.builder()
+                    .username("user")
+                    .password("user")
+                    .isEnabled(true)
+                    .isAccountNonExpired(true)
+                    .isAccountNonLocked(true)
+                    .isCredentialsNonExpired(true)
+                    .roles(Set.of(roleUser))
+                    .build();
+
+            userRepository.saveAll(Set.of(adminUser, userUser));
         };
     }
 }
