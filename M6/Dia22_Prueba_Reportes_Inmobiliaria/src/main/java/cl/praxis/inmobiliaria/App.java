@@ -53,8 +53,8 @@ public class App {
                     .build();
 
             UserEntity adminUser = UserEntity.builder()
-                    .username("admin")
-                    .password("admin")
+                    .username("usuario1")
+                    .password("$2a$10$2EYQgqDOIOkPi9EvgZzctOq1f8S.0qT.QflTC/Ntj7ZMzEjVjRSlq")
                     .isEnabled(true)
                     .isAccountNonExpired(true)
                     .isAccountNonLocked(true)
@@ -63,8 +63,8 @@ public class App {
                     .build();
 
             UserEntity userUser = UserEntity.builder()
-                    .username("user")
-                    .password("user")
+                    .username("usuario2")
+                    .password("$2a$10$2EYQgqDOIOkPi9EvgZzctOq1f8S.0qT.QflTC/Ntj7ZMzEjVjRSlq")
                     .isEnabled(true)
                     .isAccountNonExpired(true)
                     .isAccountNonLocked(true)

@@ -1,6 +1,7 @@
 package cl.praxis.inmobiliaria.configure;
 
 import cl.praxis.inmobiliaria.services.imp.CustomUserDetailsService;
+import org.hibernate.sql.Update;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -33,9 +34,11 @@ public class SecurityConfig {
 //                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 //                .authorizeHttpRequests(http -> {
 //                    //public endpoints
-//                    http.requestMatchers(HttpMethod.GET, "/", "/api/test/public").permitAll();
+//                    http.requestMatchers(HttpMethod.GET, "/", "/api/test").permitAll();
 //                    //private endpoints
-//                    http.requestMatchers(HttpMethod.GET, "/api/test/private").hasAuthority("READ");
+//                    http.requestMatchers(HttpMethod.POST, "/api/test").hasRole("ADMIN");
+//                    http.requestMatchers(HttpMethod.PUT, "/api/test").hasAnyAuthority("CREATE", "UPDATE");
+//                    http.requestMatchers(HttpMethod.DELETE, "/api/test").hasAuthority("DELETE");
 //                    //else endpoints autenticated
 //                    http.anyRequest().denyAll();
 //                    //http.anyRequest().authenticated();
@@ -71,4 +74,8 @@ public class SecurityConfig {
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+//    public static void main(String[] args) {
+//        System.out.println(new BCryptPasswordEncoder().encode("123"));
+//    }
 }
