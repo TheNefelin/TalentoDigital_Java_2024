@@ -218,6 +218,17 @@ public class SecurityConfig {
 ```
 ```
 
+3. JWT
+* [JWT.io](https://jwt.io/)
+* [Generate SHA256 Key](https://tools.keycdn.com/sha256-online-generator)
+```
+<dependency>
+    <groupId>com.auth0</groupId>
+    <artifactId>java-jwt</artifactId>
+    <version>4.4.0</version>
+</dependency>
+```
+
 ### Bootstrap
 ```
 <!-- Bootstrap CSS -->

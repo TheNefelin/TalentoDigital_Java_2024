@@ -21,7 +21,6 @@
     <title>Index</title>
 </head>
 <body>
-
     <h1 class="text-center my-4">REST</h1>
 
     <div class="container">
@@ -53,7 +52,76 @@
     </div>
 
     <div class="container">
-        <h3>End Points</h3>
+        <h3>End Points Auth</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Verbo</th>
+                <th>URL</th>
+                <th>Acceso Rol</th>
+                <th>Acceso Permiso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>POST</td>
+                <td>http://localhost:8080/api/auth/login</td>
+                <td>ACCESS ALL</td>
+                <td>ACCESS ALL</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h3>End Points Reports</h3>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Verbo</th>
+                <th>URL</th>
+                <th>Acceso Rol</th>
+                <th>Acceso Permiso</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>GET ALL</td>
+                <td>http://localhost:8080/api/reports</td>
+                <td>-</td>
+                <td>READ</td>
+            </tr>
+            <tr>
+                <td>GET BYID</td>
+                <td>http://localhost:8080/api/reports/1</td>
+                <td>-</td>
+                <td>READ</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>http://localhost:8080/api/reports</td>
+                <td>ADMIN</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>PUT</td>
+                <td>http://localhost:8080/api/reports</td>
+                <td>-</td>
+                <td>CREATE, UPDATE</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>http://localhost:8080/api/reports</td>
+                <td>-</td>
+                <td>DELETE</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h3>End Points Test</h3>
 
         <table class="table">
             <thead>
