@@ -1,6 +1,6 @@
 package cl.praxis.reclamos.controllers;
 
-import cl.praxis.reclamos.entities.IdDTO;
+import cl.praxis.reclamos.entities.dtos.IdDTO;
 import cl.praxis.reclamos.entities.UserEntitiy;
 import cl.praxis.reclamos.services.IServiceCRUD;
 import org.springframework.beans.factory.annotation.Autowired;

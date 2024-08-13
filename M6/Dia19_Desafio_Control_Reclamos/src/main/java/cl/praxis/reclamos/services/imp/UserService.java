@@ -4,7 +4,6 @@ import cl.praxis.reclamos.entities.RoleEntity;
 import cl.praxis.reclamos.entities.UserEntitiy;
 import cl.praxis.reclamos.repositories.IUserRepository;
 import cl.praxis.reclamos.services.IServiceCRUD;
-import cl.praxis.reclamos.services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,23 +11,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class UserService implements IUserService, IServiceCRUD<UserEntitiy> {
+public class UserService implements IServiceCRUD<UserEntitiy> {
     @Autowired
     private IUserRepository userRepository;
-
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;  // Esto debería funcionar si BCryptPasswordEncoder es un bean
-
-    @Override
-    public UserEntitiy register(UserEntitiy user) {
-        RoleEntity role = new RoleEntity();
-        role.setId(2);
-
-        user.setRole(role);
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-        return userRepository.save(user);
-    }
 
     @Override
     public List<UserEntitiy> getAll() {
