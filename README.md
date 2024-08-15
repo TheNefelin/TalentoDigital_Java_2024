@@ -101,5 +101,4 @@
 - [Dia22 Prueba Reportes Inmobiliaria](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia22_Prueba_Reportes_Inmobiliaria) (Spring Boot - RestController)
 
 ## Projects list [Prueba](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas)
-- [Veterinaria](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia22_Prueba_Reportes_Inmobiliaria) (Spring Boot - RestController)
-(https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas/VeterinariaTD)
+- [Veterinaria](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas/VeterinariaTD)
