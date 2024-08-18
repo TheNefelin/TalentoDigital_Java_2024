@@ -100,5 +100,6 @@
 - [Dia19 Desafio Control Reclamos](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia19_Desafio_Control_Reclamos) (Spring Boot - Controller)
 - [Dia22 Prueba Reportes Inmobiliaria](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/M6/Dia22_Prueba_Reportes_Inmobiliaria) (Spring Boot - RestController)
 
-## Projects list [Prueba](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas)
+## Projects list [Pruebas](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas)
 - [Veterinaria](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas/VeterinariaTD)
+- [Tienda Discos](https://github.com/TheNefelin/TalentoDigital_Java_2024/tree/main/Pruebas/TiendaDiscosTD)
