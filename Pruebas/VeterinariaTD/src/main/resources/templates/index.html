@@ -25,7 +25,7 @@
         <form th:action="@{/}" th:method="post">
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <label for="idSucursal" class="form-label">Email address</label>
+                    <label for="idSucursal" class="form-label">Sucursal</label>
                     <select id="idSucursal" name="idSucursal" class="form-select" aria-label="Default select example">
                         <th:block th:each="sucursal : ${sucursales}">
                             <option
@@ -37,7 +37,7 @@
                     </select>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="idTipoAtencion" class="form-label">Password</label>
+                    <label for="idTipoAtencion" class="form-label">Tipo Atencion</label>
                     <select id="idTipoAtencion" name="idTipoAtencion" class="form-select" aria-label="Default select example">
                         <th:block th:each="tipoAtencion : ${tipoAtenciones}">
                             <option
