@@ -21,7 +21,6 @@ public class MiembroService implements IServiceCRUD<Miembro>, IMiembroService {
 
     @Override
     public List<Miembro> findAllByIdSucursalAndIdMembresia(int idSucursal, int idMembresia) {
-        //return miembroRepository.findAllByIdSucursalAndIdMembresia(idSucursal, idMembresia);
-        return List.of();
+        return miembroRepository.findAllByIdSucursalAndIdMembresia(idSucursal, idMembresia);
     }
 }

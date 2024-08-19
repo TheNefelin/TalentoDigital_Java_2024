@@ -37,6 +37,11 @@ public class IndexController {
             @RequestParam("idSucursal") int idSucursal,
             @RequestParam("idMembresia") int idMembresia
     ) {
+        model.addAttribute("idSucursal", idSucursal);
+        model.addAttribute("idMembresia", idMembresia);
+
+        model.addAttribute("sucursales", sucursalService.findAll());
+        model.addAttribute("membresias", membresiaService.findAll());
         model.addAttribute("miembros", miembroService.findAllByIdSucursalAndIdMembresia(idSucursal, idMembresia));
         return "index";
     }

@@ -73,10 +73,10 @@
             <tr th:each="miembro : ${miembros}">
                 <td th:text="${miembro.nombre}"></td>
                 <td th:text="${miembro.apellido}"></td>
-                <td th:text="${miembro.idGenero}"></td>
+                <td th:text="${miembro.genero.nombre}"></td>
                 <td th:text="${miembro.email}"></td>
-                <td th:text="${miembro.idMembresia}"></td>
-                <td th:text="${miembro.idMembresia}"></td>
+                <td th:text="${#lists.isEmpty(miembro.ventas) ? 'Sin Sucursal' : miembro.ventas[0].sucursal.nombre}"></td>
+                <td th:text="${miembro.membresia.nombre}"></td>
             </tr>
             </tbody>
         </table>

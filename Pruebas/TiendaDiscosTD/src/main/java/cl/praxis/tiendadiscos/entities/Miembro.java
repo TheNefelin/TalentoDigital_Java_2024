@@ -1,15 +1,13 @@
 package cl.praxis.tiendadiscos.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,9 +32,14 @@ public class Miembro {
     @Column(name = "miembro_fecha_nacimiento")
     private LocalDate nacimiento;
 
-    @Column(name = "tipo_membresia_id")
-    private int IdMembresia;
+    @ManyToOne
+    @JoinColumn(name = "tipo_membresia_id")
+    private Membresia membresia;
 
-    @Column(name = "genero_id")
-    private int idGenero;
+    @ManyToOne
+    @JoinColumn(name = "genero_id")
+    private Genero genero;
+
+    @OneToMany(mappedBy = "miembro")
+    private List<Venta> ventas;
 }
