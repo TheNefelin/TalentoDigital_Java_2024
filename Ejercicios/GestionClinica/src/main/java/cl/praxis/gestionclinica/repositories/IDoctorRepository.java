@@ -16,7 +16,8 @@ public interface IDoctorRepository extends JpaRepository<Doctor, Integer> {
                 "d.especialidad.nombre LIKE %:buscar% OR " +
                 "CAST(d.experiencia AS string) LIKE %:buscar% " +
             ") AND (" +
-                ":idEspecialidad = 0 OR d.especialidad.id = :idEspecialidad" +
+                ":idEspecialidad = 0 OR " +
+                "d.especialidad.id = :idEspecialidad" +
             ")")
     List<Doctor> findDoctoresPrototipe(int idEspecialidad , String buscar);
 }
