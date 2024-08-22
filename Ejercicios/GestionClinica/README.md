@@ -40,7 +40,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 ### HTML
 ```
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 ```
 
 ### Bootstrap
@@ -65,4 +65,10 @@ spring.jpa.hibernate.ddl-auto=update
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous">
 </script>    
+```
+
+### CRUD
+```
+# Enable PUT and DELETE in MVC
+spring.mvc.hiddenmethod.filter.enabled=true
 ```
