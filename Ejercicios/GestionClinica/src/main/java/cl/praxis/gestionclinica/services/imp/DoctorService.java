@@ -20,22 +20,25 @@ public class DoctorService implements IServiceCRUD<Doctor>, IDoctorService {
     }
 
     @Override
-    public List<Doctor> findDoctoresByEspecialidad_Id(int idEspecialidad) {
-        if (idEspecialidad > 0)
-            return doctorRepository.findDoctoresByEspecialidad_Id(idEspecialidad);
-        else
-            return doctorRepository.findAll();
+    public List<Doctor> findDoctoresPrototipe(int idEspecialidad, String buscar) {
+        return doctorRepository.findDoctoresPrototipe(idEspecialidad, buscar);
     }
 
     @Override
-    public List<Doctor> findDoctoresByText(String buscar) {
+    public List<Doctor> findDoctoresByIdAndText(int idEspecialidad, String buscar) {
         return doctorRepository.findAll()
                 .stream()
                 .filter(e ->
-                        String.valueOf(e.getId()).contains(buscar) ||
-                        e.getNombre().toLowerCase().contains(buscar.toLowerCase()) ||
-                        e.getEspecialidad().getNombre().toLowerCase().contains(buscar.toLowerCase()) ||
-                        String.valueOf(e.getExperiencia()).contains(buscar))
+                        (
+                            e.getId() == idEspecialidad ||
+                            idEspecialidad == 0
+                        ) && (
+                            String.valueOf(e.getId()).contains(buscar) ||
+                            e.getNombre().toLowerCase().contains(buscar.toLowerCase()) ||
+                            e.getEspecialidad().getNombre().toLowerCase().contains(buscar.toLowerCase()) ||
+                            String.valueOf(e.getExperiencia()).contains(buscar)
+                        )
+                )
                 .toList();
     }
 

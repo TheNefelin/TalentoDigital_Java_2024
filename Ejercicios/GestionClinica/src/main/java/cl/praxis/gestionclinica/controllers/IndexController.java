@@ -32,13 +32,8 @@ public class IndexController {
             @RequestParam("idEspecialidad") int idEspecialidad,
             @RequestParam("buscar") String buscar
     ) {
-        if (buscar.isEmpty())
-            model.addAttribute("doctores", doctorService.findDoctoresByEspecialidad_Id(idEspecialidad));
-        else {
-            idEspecialidad = 0;
-            model.addAttribute("doctores", doctorService.findDoctoresByText(buscar));
-        }
-
+        //model.addAttribute("doctores", doctorService.findDoctoresPrototipe(idEspecialidad, buscar));
+        model.addAttribute("doctores", doctorService.findDoctoresByIdAndText(idEspecialidad, buscar));
         model.addAttribute("idEspecialidad", idEspecialidad);
         model.addAttribute("buscar", buscar);
         model.addAttribute("especialidades", especialidadService.findAll());
