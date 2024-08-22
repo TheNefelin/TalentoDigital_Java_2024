@@ -24,4 +24,9 @@ public class AtencionRestController {
             @PathVariable  int idTipoAtencion) {
         return atencionService.getAllByIdSucursalAndIdTipoAtencion(idSucursal, idTipoAtencion);
     }
+
+    @PostMapping
+    public String test() {
+        return "Test";
+    }
 }

@@ -1,22 +1,5 @@
 # Gestion Clinica
 
-### Connection
-```
-spring.mvc.view.prefix=/templates/
-
-# MySQL Database Configuration
-spring.datasource.url=jdbc:mysql://localhost:3306/praxis?useSSL=false&serverTimezone=UTC
-spring.datasource.username=praxis
-spring.datasource.password=praxis
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
-
-# Hibernate Configuration
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-spring.jpa.hibernate.ddl-auto=update
-```
-
 ### Folder
 ```
 /
@@ -36,6 +19,29 @@ spring.jpa.hibernate.ddl-auto=update
 │          ├── static/
 │          └── templates/
 └── test/
+```
+
+### Connection
+```
+spring.mvc.view.prefix=/templates/
+
+# MySQL Database Configuration
+spring.datasource.url=jdbc:mysql://localhost:3306/praxis?useSSL=false&serverTimezone=UTC
+spring.datasource.username=praxis
+spring.datasource.password=praxis
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
+# Hibernate Configuration
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### CRUD
+```
+# Enable PUT and DELETE in MVC
+spring.mvc.hiddenmethod.filter.enabled=true
 ```
 
 ### HTML
@@ -67,8 +73,23 @@ spring.jpa.hibernate.ddl-auto=update
 </script>    
 ```
 
-### CRUD
+### Security
 ```
-# Enable PUT and DELETE in MVC
-spring.mvc.hiddenmethod.filter.enabled=true
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
+        return httpSecurity
+                .csrf(csrf -> csrf.disable())
+                .httpBasic(Customizer.withDefaults())
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(http -> {
+                    http.requestMatchers(HttpMethod.GET,"/").permitAll();
+                    http.anyRequest().authenticated();
+                })
+               .build();
+    }
+}
 ```
+
