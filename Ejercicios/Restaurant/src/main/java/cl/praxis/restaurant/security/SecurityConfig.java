@@ -18,7 +18,6 @@ public class SecurityConfig {
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
-                    //http.requestMatchers(HttpMethod.GET,"/").permitAll();
                     http.requestMatchers("/**", "/api/**").permitAll();
                     http.anyRequest().permitAll();
                     //http.anyRequest().authenticated();
