@@ -25,6 +25,7 @@ public class PedidoService implements IServiceCRUD<Pedido> {
 
     @Override
     public Pedido create(Pedido pedido) {
+        pedido.setId(0);
         return pedidoRepository.save(pedido);
     }
 

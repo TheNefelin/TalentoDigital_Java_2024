@@ -20,19 +20,19 @@ public class Pedido {
     @Column(name = "ID")
     private int id;
 
-    @Column(name = "Mesa_ID")
-    private int idMesa;
+//    @Column(name = "Mesa_ID")
+//    private int idMesa;
 
-    @Column(name = "Camarero_ID")
-    private int idCamarero;
+//    @Column(name = "Camarero_ID")
+//    private int idCamarero;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "Mesa_ID")
-//    private Mesa mesa;
-//
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "Camarero_ID")
-//    private Camarero camarero;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Mesa_ID")
+    private Mesa mesa;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "Camarero_ID")
+    private Camarero camarero;
 
     @Column(name = "Fecha")
     private LocalDate fecha;
