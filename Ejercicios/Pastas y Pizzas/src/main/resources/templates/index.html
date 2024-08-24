@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+
+    <title>Pastas y Pizzas</title>
+</head>
+<body>
+
+    <header class="bg-body-tertiary shadow-lg">
+        <th:block th:insert="components/nav :: nav"></th:block>
+    </header>
+
+    <section class="container my-4">
+        <H1 class="text-center">Pastas y Pizzas</H1>
+    </section>
+
+    <section class="container mt-4">
+        <h3>Lista de Comandas</h3>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Id Comanda</th>
+                <th scope="col">Garzon</th>
+                <th scope="col">Fecha Emisión</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Detalle Comanda</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="comanda : ${comandas}">
+                <td th:text="${comanda.id}"></td>
+                <td th:text="${comanda.garzon.nombre}"></td>
+                <td th:text="${comanda.fechaEmision}"></td>
+                <td th:text="${comanda.estado ? 'Pagada' : 'No Pagada'}"></td>
+                <td class="d-flex gap-2">
+                    <form th:method="post" th:action="@{/}">
+                        <input th:value="${comanda.id}" name="id" type="hidden">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="bi bi-plus-circle"></i>
+                            Mostrar Detalle
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="components/bootstrap_css :: head"></th:block>
+
+    <title>Detalle Comanda</title>
+</head>
+<body>
+    <header class="bg-body-tertiary shadow-lg">
+        <th:block th:insert="components/nav :: nav"></th:block>
+    </header>
+
+    <section class="container my-4">
+        <H1 class="text-center">Detalle Comanda</H1>
+    </section>
+
+    <section th:if="${detalles.size == 0}" class="container">
+        <div class="alert alert-warning" role="alert">
+            La Comanda no Tiene Detalle
+            <a href="/" class="btn btn-primary mx-4">
+                <i class="bi bi-arrow-counterclockwise"></i>
+                Volver
+            </a>
+        </div>
+    </section>
+
+    <th:block th:each="detalle : ${detalles}">
+        <section class="container d-flex justify-content-center mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Pastas y Pizzas
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Detalle...</h5>
+
+                    <ul class="asterisk-list">
+                        <li>Identificador Detalle: <span th:text="${detalle.id}"></span></li>
+                        <li>Identificador de Comanda: <span th:text="${detalle.idComanda}"></span></li>
+                        <li>Código de Producto <span th:text="${detalle.producto.id}"></span></li>
+                        <li>Cantidad: <span th:text="${detalle.cantidadProducto}"></span></li>
+                    </ul>
+
+                    <a href="/" class="btn btn-primary">
+                        <i class="bi bi-arrow-counterclockwise"></i>
+                        Volver
+                    </a>
+                </div>
+            </div>
+        </section>
+    </th:block>
+
+    <script th:replace="components/bootstrap_js :: script"></script>
+</body>
+</html>
